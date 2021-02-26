@@ -22,10 +22,6 @@
         width: calc(100% - 356px);
     }
 
-    #main #section01 .wrap .container .tab-wrap {
-        /* width: 24%; */
-    }
-
     #main #section01 .wrap .container .news-wrap .news {
         margin-right: 1.4285%;
         width: 23.9285%;
@@ -132,6 +128,12 @@
         width: 49.5%;
         height: 100%;
     }
+    #main #section01 .wrap .container .news-wrap .news a .cover strong {
+        margin-top: 3.8208%; /*16px*/
+    }
+    #main #section01 .wrap .container .news-wrap .news a .cover i {
+        margin: 8.597% auto 7.6417%; /*36px auto 32px*/
+    }
 
     #main #section01 .wrap .container .news-wrap .news:nth-child(odd) {
         margin-right: 001%;
@@ -176,6 +178,19 @@
     #main #section01 .wrap .container .slider-wrap {
         width: 100%;
         height: 310px;
+    }
+    #main #section01 .wrap .container .news-wrap .news a:hover .cover {
+        padding: 4.7761%;/*1rem*/
+    }
+    #main #section01 .wrap .container .news-wrap .news a .cover strong {
+        margin-top: 2.985%;/*10px*/
+    }
+    #main #section01 .wrap .container .news-wrap .news a .cover i {
+        visibility: hidden;
+        height: 0;
+    }
+    #main #section01 .wrap .container .news-wrap .news a .cover span {
+        max-height: auto;
     }
 
     #main #section01 .wrap .container .tab-wrap {
