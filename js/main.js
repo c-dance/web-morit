@@ -1,8 +1,9 @@
 $(document).ready(function(){
 
     var init = function(){
-        fadeSlideFn();
-        moveSlideFn();
+
+        mainSlideFn();
+        newsSlideFn();
         bannerFn();
         footerFn();
         tabFn();
@@ -24,23 +25,20 @@ $(document).ready(function(){
         })
     };
 
-    var fadeSlideFn = function(){
-        var $slideBtns = $('#section01 .slider-wrap .slide-btns button');
-        var $prevBtn = $slideBtns.eq(0);
-        var $nextBtn = $slideBtns.eq(2);
-        var $pauseBtn = $slideBtns.eq(1);
+    var mainSlideFn = function(){
+        var $slideBtns = $('#section01 .slider-wrap .slide-btns button'),
+            $prevBtn = $slideBtns.eq(0),
+            $nextBtn = $slideBtns.eq(2),
+            $pauseBtn = $slideBtns.eq(1),
+            $slide = $('#section01 .slider-wrap .slide'),
+            $slideLength = $slide.length,
+            $numText = $('#section01 .slider-wrap .slide-btns .num');
+        // var $numsText = $('#section01 .slider-wrap .slide-btns .nums');
+        var $currentIdx = 0,
+            nextIdx = 0,
+            isPaused = false;
 
-        var $numsText = $('#section01 .slider-wrap .slide-btns .nums');
-        var $numText = $('#section01 .slider-wrap .slide-btns .num');
-
-        var $slide = $('#section01 .slider-wrap .slide');
-        var $slideLength = $slide.length;
-
-        var $currentIdx = 0;
-        var nextIdx = 0;
-        var isPaused = false;
-
-        var fadeslide = function(fromSlide, toSldie){
+        var fadeOutFn = function(fromSlide, toSldie){
             fromSlide.animate({
                 opacity: 0
             },500, 'linear');
@@ -66,7 +64,7 @@ $(document).ready(function(){
             else nextIdx = $currentIdx - 1;
 
             clearInterval(startAutoFade);
-            fadeslide($slide.eq($currentIdx), $slide.eq(nextIdx));          
+            fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));          
             $currentIdx = nextIdx;
             handleNumTxt();
             handleAutoFade();
@@ -82,7 +80,7 @@ $(document).ready(function(){
             else nextIdx = $currentIdx+1;
 
             clearInterval(startAutoFade);
-            fadeslide($slide.eq($currentIdx), $slide.eq(nextIdx));
+            fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));
             $currentIdx = nextIdx;
             handleNumTxt();
             handleAutoFade();
@@ -106,7 +104,7 @@ $(document).ready(function(){
             startAutoFade = setInterval(function(){ 
                 if($currentIdx>=$slideLength-1) nextIdx = 0;
                 else nextIdx = $currentIdx+1;
-                fadeslide($slide.eq($currentIdx), $slide.eq(nextIdx));
+                fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));
                 $currentIdx = nextIdx;
                 handleNumTxt();
             }, 4000);
@@ -117,80 +115,73 @@ $(document).ready(function(){
 
     };
 
-    var moveSlideFn = function(){
-        var $slideWrap = $('#section01 .news:nth-child(4) .slide-wrap');
-        var $slide = $('#section01 .news:nth-child(4) .slide');
-        var $slideBtn = $('#section01 .news:nth-child(4) .top-cover i')
-        var $slideLength = $slide.length;
+    var newsSlideFn = function(){
+
+        var $slideWrap = $('#section01 .news:nth-child(4) .slide-wrap'),
+            $slide = $slideWrap.find('.slide'),
+            $slideLength = $slide.length-1,//4
+            $slideBtn = $('#section01 .news:nth-child(4) .top-cover i');
+            
 
         var $currentIdx = 0;
-        var $targetIdx = -1;
-        var moveX = 0;
-        var isRotated = false;
-
+            $targetIdx = 0,
+            currentX = 0,
+            moveX = 0;
 
         $slideBtn.each(function(idx){
             $(this).click(function(e){
                 e.preventDefault();
-                $targetIdx = idx;
-                moveSlide();
+                clearInterval(setAutoSlide);
+
+                if($targetIdx != idx){
+                    $targetIdx = idx;
+                    $slideBtn.eq($currentIdx).removeClass('active');
+                    $slideBtn.eq($targetIdx).addClass('active');
+                }
+
+                shiftSlideFn();
+                $currentIdx = $targetIdx;
+
+                autoSlideFn();
+
             })
         })
 
-        // var handleAutoMove = function(){  
-        //     setAutoMove = setInterval(function(){
-        //         if($currentIdx < $slideLength-1) $targetIdx = $currentIdx + 1;
-        //         else $targetIdx = 0;
-        //         moveSlide();
-        //     }, 4000);
-        // };
-
-        var moveSlide = function(){
-            moveX = - ($slideWrap.find('.slide'+$targetIdx).offset().left- $slideWrap.find('.slide'+$currentIdx).offset().left);
-            
-            $slideWrap.animate({
-                left : $slideWrap.position().left + moveX
-            }, 600, 'swing');
+        var shiftSlideFn = function(){
 
             $slideBtn.eq($currentIdx).removeClass('active');
             $slideBtn.eq($targetIdx).addClass('active');
+            
+            currentX = $('#section01 .news:nth-child(4) .slide-wrap').position().left;
+            moveX = $slide.eq($currentIdx).innerWidth();
 
-            $currentIdx = $targetIdx;  
-
-            if($currentIdx===$slideLength-1){
-                $slide.last().after($slide.first());
-                $slideWrap.css({'left':$slideWrap.position().left+$slide.last().innerWidth()});
-                console.log($slideWrap.position().left);
-                isRotated = true;               
-            };
-            if($currentIdx===0 && isRotated){
-                for(var i = 0; i<$slideLength-1; i++){
-                    $slide.eq(i).after($slide.eq(i+1).detach());
-                }
-                $slideWrap.css({'left':0});
-                isRotated = false;
+            //마지막 슬라이드면서 다음 슬라이드로 넘어가야 할 때
+            if($currentIdx >= $slideLength-1 && $targetIdx===0){ 
+                console.log('rotate');
+                $slideWrap.animate({
+                    left : currentX - moveX + 'px'
+                },800,'swing', function(){
+                    $slideWrap.css({'left': 0});
+                });
+            }else{
+                moveX = moveX * ($currentIdx - $targetIdx);
+                $slideWrap.animate({
+                    left : currentX + moveX + 'px'
+                },800,'swing');
             }
-
-            // setTimeout(function(){
-            //     console.log($slideWrap.position().left);
-            //     if($currentIdx===$slideLength-1){
-            //         $slide.last().after($slide.first());
-            //         $slideWrap.css({'left':$slideWrap.position().left+$slide.last().innerWidth()});
-            //         console.log($slideWrap.position().left);
-            //         isRotated = true;               
-            //     };
-            //     if($currentIdx===0 && isRotated){
-            //         for(var i = 0; i<$slideLength-1; i++){
-            //             $slide.eq(i).after($slide.eq(i+1).detach());
-            //         }
-            //         $slideWrap.css({'left':0});
-            //         isRotated = false;
-            //     }
-            // },600);
         };
 
+        var autoSlideFn = function(){
+            setAutoSlide = setInterval(function(){
+                $targetIdx ++;
+                if($currentIdx >= $slideLength-1) $targetIdx = 0;
+                shiftSlideFn();
+                $currentIdx = $targetIdx;
+            },2000);
+        }
+        
+        autoSlideFn();
 
-        // handleAutoMove();
     };
 
     var bannerFn = function(){
@@ -208,32 +199,39 @@ $(document).ready(function(){
                 clearInterval(setAutoBanner);
                 $bannerBtns.eq(1).addClass('active');
                 isPaused = true;
+            }else{
+                $bannerBtns.eq(2).removeClass('active');
             }
+            $(this).addClass('active');
             toPrevShift();
         });
         $bannerBtns.eq(1).click(function(e){//pouse
             e.preventDefault();
-            if(!isPaused){
+            if(!isPaused){ // -> pause slide
                 clearInterval(setAutoBanner);
                 $(this).addClass('active');
                 isPaused = true;
-            }else{
+            }else{ // -> restart slide
                 autoBannerFn();
-                $(this).removeClass('active');
+                $bannerBtns.removeClass('active');
                 isPaused = false;
             }   
             
         });
         $bannerBtns.eq(2).click(function(e){
             e.preventDefault();
-            if(!isPaused){
+            if(!isPaused){ //-> pause slide
                 clearInterval(setAutoBanner);
                 $bannerBtns.eq(1).addClass('active');
                 isPaused = true;
+            }else{ // -> remove btnBorder
+                $bannerBtns.eq(0).removeClass('active');
             }
+            $(this).addClass('active');
             toNextShift();
         });
 
+        /* initialize banner slide */
         var setBanner = function(){
             $banner.last().after($banner.first().clone());
             $banner.first().before($banner.last().clone());
@@ -241,22 +239,22 @@ $(document).ready(function(){
         }
 
         var toNextShift = function(){
-            $banner = $('#section03 .banner-item');//현재 배너 배열 받아옴
-            $banner.first().detach(); //앞의 여분 배너 제거
+            $banner = $('#section03 .banner-item');
+            $banner.first().detach();
             $bannerWrap.css('left','0'); 
 
             $bannerWrap.animate({
                 'left' : - moveX + 'px'
             }, 600, 'linear');
 
-            $banner.last().after($banner.eq(2).clone()); //맨 뒤에 여분 배너 추가 (처음에 받아올 때, 앞에서 세번째 였던 것)
+            $banner.last().after($banner.eq(2).clone());
    
         };
 
         var toPrevShift = function(){
             $banner = $('#section03 .banner-item');
             $banner.first().before($banner.eq($banner.length-3).clone());
-            $banner.last().detach(); //뒤의 여분 배너 제거
+            $banner.last().detach(); 
             $bannerWrap.css('left',- moveX*2 + 'px'); 
 
             $bannerWrap.animate({
@@ -282,8 +280,6 @@ $(document).ready(function(){
         var $goBtn = $('#footer .go-item > a'),
             $goMenu = $('#footer .go-item > div');
 
-        console.log($goMenu);
-
         $goBtn.click(function(e){
             e.preventDefault();
             $goMenu.removeClass('active');   
@@ -296,8 +292,6 @@ $(document).ready(function(){
         });
         
     };
-
-
 
     init();
 
