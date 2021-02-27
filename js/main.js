@@ -119,31 +119,30 @@ $(document).ready(function(){
 
         var $slideWrap = $('#section01 .news:nth-child(4) .slide-wrap'),
             $slide = $slideWrap.find('.slide'),
+            $slideWidth = $slide.innerWidth(),
             $slideLength = $slide.length-1,//4
             $slideBtn = $('#section01 .news:nth-child(4) .top-cover i');
             
 
         var $currentIdx = 0;
             $targetIdx = 0,
-            currentX = 0,
-            moveX = 0;
+            positionX = 0,
+            moveWidth = 0;
 
         $slideBtn.each(function(idx){
             $(this).click(function(e){
                 e.preventDefault();
+
+                if(idx===$currentIdx) return false;
+
                 clearInterval(setAutoSlide);
-
-                if($targetIdx != idx){
-                    $targetIdx = idx;
-                    $slideBtn.eq($currentIdx).removeClass('active');
-                    $slideBtn.eq($targetIdx).addClass('active');
-                }
-
+                $targetIdx = idx;
                 shiftSlideFn();
                 $currentIdx = $targetIdx;
-
-                autoSlideFn();
-
+                setTimeout(function(){
+                    autoSlideFn();
+                },1000)
+                
             })
         })
 
@@ -151,22 +150,20 @@ $(document).ready(function(){
 
             $slideBtn.eq($currentIdx).removeClass('active');
             $slideBtn.eq($targetIdx).addClass('active');
-            
-            currentX = $('#section01 .news:nth-child(4) .slide-wrap').position().left;
-            moveX = $slide.eq($currentIdx).innerWidth();
 
-            //마지막 슬라이드면서 다음 슬라이드로 넘어가야 할 때
+            positionX = - $slideWidth * ($currentIdx);
+
             if($currentIdx >= $slideLength-1 && $targetIdx===0){ 
                 console.log('rotate');
-                $slideWrap.animate({
-                    left : currentX - moveX + 'px'
+                $slideWrap.stop().animate({
+                    left : positionX - $slideWidth + 'px'
                 },800,'swing', function(){
                     $slideWrap.css({'left': 0});
                 });
             }else{
-                moveX = moveX * ($currentIdx - $targetIdx);
-                $slideWrap.animate({
-                    left : currentX + moveX + 'px'
+                moveWidth = $slideWidth * ($currentIdx - $targetIdx);
+                $slideWrap.stop().animate({
+                    left : positionX + moveWidth + 'px'
                 },800,'swing');
             }
         };
@@ -179,7 +176,12 @@ $(document).ready(function(){
                 $currentIdx = $targetIdx;
             },2000);
         }
-        
+
+        $(window).resize(function(e){
+            e.preventDefault();
+            $slideWidth = $slide.innerWidth();
+        })
+
         autoSlideFn();
 
     };
