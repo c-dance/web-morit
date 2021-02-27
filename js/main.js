@@ -3,6 +3,7 @@ $(document).ready(function(){
     var init = function(){
         fadeSlideFn();
         moveSlideFn();
+        bannerFn();
         footerFn();
         tabFn();
     };
@@ -99,10 +100,7 @@ $(document).ready(function(){
                 clearInterval(startAutoFade);
                 isPaused = true;
             }
-            
-            //stop autoSlide
         });
-
 
         var handleAutoFade = function(){
             startAutoFade = setInterval(function(){ 
@@ -111,7 +109,7 @@ $(document).ready(function(){
                 fadeslide($slide.eq($currentIdx), $slide.eq(nextIdx));
                 $currentIdx = nextIdx;
                 handleNumTxt();
-            }, 3000);
+            }, 4000);
         };
 
         handleNumTxt();
@@ -123,45 +121,166 @@ $(document).ready(function(){
         var $slideWrap = $('#section01 .news:nth-child(4) .slide-wrap');
         var $slide = $('#section01 .news:nth-child(4) .slide');
         var $slideBtn = $('#section01 .news:nth-child(4) .top-cover i')
+        var $slideLength = $slide.length;
 
         var $currentIdx = 0;
+        var $targetIdx = -1;
+        var moveX = 0;
+        var isRotated = false;
 
-        var clickSlide = function(){
-            var moveX = 0;
-            $slideBtn.each(function(idx){
-                $(this).click(function(e){
-                    e.preventDefault();
-                    if($currentIdx !== idx){
-                        moveX = - ($slide.eq(idx).innerWidth() * idx);
-                        $slideWrap.animate({
-                            marginLeft: moveX+'px'
-                        },400,'swing');
-                        $slideBtn.eq($currentIdx).removeClass('active');
-                        $slideBtn.eq(idx).addClass('active');
-                        $currentIdx = idx;
-                    }else{
-                        return;
-                    }
-                })
+
+        $slideBtn.each(function(idx){
+            $(this).click(function(e){
+                e.preventDefault();
+                $targetIdx = idx;
+                moveSlide();
             })
-        };
+        })
 
-        // var autoSlide = function(index){
-        //     console.log($slide.length);
-        //     console.log($slide.eq(index).innerWidth());
-
-
-            
+        // var handleAutoMove = function(){  
+        //     setAutoMove = setInterval(function(){
+        //         if($currentIdx < $slideLength-1) $targetIdx = $currentIdx + 1;
+        //         else $targetIdx = 0;
+        //         moveSlide();
+        //     }, 4000);
         // };
 
+        var moveSlide = function(){
+            moveX = - ($slideWrap.find('.slide'+$targetIdx).offset().left- $slideWrap.find('.slide'+$currentIdx).offset().left);
+            
+            $slideWrap.animate({
+                left : $slideWrap.position().left + moveX
+            }, 600, 'swing');
 
-        clickSlide();
-        
+            $slideBtn.eq($currentIdx).removeClass('active');
+            $slideBtn.eq($targetIdx).addClass('active');
+
+            $currentIdx = $targetIdx;  
+
+            if($currentIdx===$slideLength-1){
+                $slide.last().after($slide.first());
+                $slideWrap.css({'left':$slideWrap.position().left+$slide.last().innerWidth()});
+                console.log($slideWrap.position().left);
+                isRotated = true;               
+            };
+            if($currentIdx===0 && isRotated){
+                for(var i = 0; i<$slideLength-1; i++){
+                    $slide.eq(i).after($slide.eq(i+1).detach());
+                }
+                $slideWrap.css({'left':0});
+                isRotated = false;
+            }
+
+            // setTimeout(function(){
+            //     console.log($slideWrap.position().left);
+            //     if($currentIdx===$slideLength-1){
+            //         $slide.last().after($slide.first());
+            //         $slideWrap.css({'left':$slideWrap.position().left+$slide.last().innerWidth()});
+            //         console.log($slideWrap.position().left);
+            //         isRotated = true;               
+            //     };
+            //     if($currentIdx===0 && isRotated){
+            //         for(var i = 0; i<$slideLength-1; i++){
+            //             $slide.eq(i).after($slide.eq(i+1).detach());
+            //         }
+            //         $slideWrap.css({'left':0});
+            //         isRotated = false;
+            //     }
+            // },600);
+        };
+
+
+        // handleAutoMove();
     };
 
+    var bannerFn = function(){
+
+        var $bannerWrap = $('#section03 .banner-wrap'),
+            $banner = $('#section03 .banner-item'),
+            $bannerBtns = $('#section03 .btn-wrap button');
+
+        var moveX = $banner.first().innerWidth();
+        var isPaused = false;
+
+        $bannerBtns.eq(0).click(function(e){
+            e.preventDefault();
+            if(!isPaused){
+                clearInterval(setAutoBanner);
+                $bannerBtns.eq(1).addClass('active');
+                isPaused = true;
+            }
+            toPrevShift();
+        });
+        $bannerBtns.eq(1).click(function(e){//pouse
+            e.preventDefault();
+            if(!isPaused){
+                clearInterval(setAutoBanner);
+                $(this).addClass('active');
+                isPaused = true;
+            }else{
+                autoBannerFn();
+                $(this).removeClass('active');
+                isPaused = false;
+            }   
+            
+        });
+        $bannerBtns.eq(2).click(function(e){
+            e.preventDefault();
+            if(!isPaused){
+                clearInterval(setAutoBanner);
+                $bannerBtns.eq(1).addClass('active');
+                isPaused = true;
+            }
+            toNextShift();
+        });
+
+        var setBanner = function(){
+            $banner.last().after($banner.first().clone());
+            $banner.first().before($banner.last().clone());
+            $bannerWrap.css('left', - moveX+'px');
+        }
+
+        var toNextShift = function(){
+            $banner = $('#section03 .banner-item');//현재 배너 배열 받아옴
+            $banner.first().detach(); //앞의 여분 배너 제거
+            $bannerWrap.css('left','0'); 
+
+            $bannerWrap.animate({
+                'left' : - moveX + 'px'
+            }, 600, 'linear');
+
+            $banner.last().after($banner.eq(2).clone()); //맨 뒤에 여분 배너 추가 (처음에 받아올 때, 앞에서 세번째 였던 것)
+   
+        };
+
+        var toPrevShift = function(){
+            $banner = $('#section03 .banner-item');
+            $banner.first().before($banner.eq($banner.length-3).clone());
+            $banner.last().detach(); //뒤의 여분 배너 제거
+            $bannerWrap.css('left',- moveX*2 + 'px'); 
+
+            $bannerWrap.animate({
+                'left' : - moveX + 'px'
+            }, 600, 'linear');
+
+        };
+
+        var autoBannerFn = function(){
+
+            setAutoBanner = setInterval(function(){
+                toPrevShift();
+            },3000)
+        }
+
+        setBanner();
+        autoBannerFn();
+
+    };
+
+
     var footerFn = function(){
-        var $goBtn = $('#footer .go-item > a');
-        var $goMenu = $('#footer .go-item > div');
+        var $goBtn = $('#footer .go-item > a'),
+            $goMenu = $('#footer .go-item > div');
 
         console.log($goMenu);
 

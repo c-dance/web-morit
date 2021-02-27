@@ -26,6 +26,10 @@
         margin-right: 1.4285%;
         width: 23.9285%;
     }
+
+    #main #section03 .wrap {
+        padding: 40px 30px;
+    }
 }
 
 @media screen and (max-width: 1280px) {
