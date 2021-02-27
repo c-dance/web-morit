@@ -636,11 +636,22 @@
 
 /* ===============================footer==================================*/
 #footer {
+    z-index: 1;
+    position: relative;
     width: 100%;
     height: auto;
     background-color: #4d515a;
 }
-
+#footer::after {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 73px;
+    content: '';
+    background-color: #42464d;
+}
 #footer .wrap {
     margin: 0 auto;
     width: 100%;
@@ -649,12 +660,14 @@
 }
 
 #footer .wrap .container {
+    z-index: 3;
     position: relative;
     width: 100%;
     height: 100%;
 }
 /*-----lihnk-wrap-----*/
 #footer .wrap .container .link-wrap {
+    margin-left: 0;
     padding: 24px 0;
     width: 100%;
     background-color: #42464d;
@@ -719,6 +732,7 @@
 #footer .wrap .container .go-wrap .go-item > a i {
     display: inline-block;
     position: absolute;
+    padding: 11px 9px;
     top: 21px;
     right: 18px;
     width: 28px;
@@ -726,6 +740,17 @@
     border-radius: 50%;
     content:'';
     background-color: #2b2c2e;
+}
+#footer .wrap .container .go-wrap .go-item > a i::after {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 6px;
+    content: '';
+    background:url(../img/bg_iconset02.png) -225px -50px no-repeat;
+}
+#footer .wrap .container .go-wrap .go-item > a.active i::after {
+    background:url(../img/bg_iconset02.png) -200px -50px no-repeat;
 }
 #footer .wrap .container .go-wrap .go-item > div.active {
     display: block;

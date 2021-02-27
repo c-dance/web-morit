@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     var init = function(){
-
         mainSlideFn();
         newsSlideFn();
         bannerFn();
@@ -123,11 +122,9 @@ $(document).ready(function(){
             $slideLength = $slide.length-1,//4
             $slideBtn = $('#section01 .news:nth-child(4) .top-cover i');
             
-
         var $currentIdx = 0;
             $targetIdx = 0,
-            positionX = 0,
-            moveWidth = 0;
+            positionX = 0;
 
         $slideBtn.each(function(idx){
             $(this).click(function(e){
@@ -154,16 +151,14 @@ $(document).ready(function(){
             positionX = - $slideWidth * ($currentIdx);
 
             if($currentIdx >= $slideLength-1 && $targetIdx===0){ 
-                console.log('rotate');
                 $slideWrap.stop().animate({
                     left : positionX - $slideWidth + 'px'
                 },800,'swing', function(){
                     $slideWrap.css({'left': 0});
                 });
             }else{
-                moveWidth = $slideWidth * ($currentIdx - $targetIdx);
                 $slideWrap.stop().animate({
-                    left : positionX + moveWidth + 'px'
+                    left : positionX + $slideWidth * ($currentIdx - $targetIdx) + 'px'
                 },800,'swing');
             }
         };
@@ -284,8 +279,11 @@ $(document).ready(function(){
 
         $goBtn.click(function(e){
             e.preventDefault();
-            $goMenu.removeClass('active');   
+            // $goMenu.removeClass('active'); 
+             
             $(this).next('div').delay(3000).toggleClass('active');
+            $(this).toggleClass('active');
+
         })
 
         $('body').click(function(e){

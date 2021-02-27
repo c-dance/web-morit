@@ -59,7 +59,7 @@
         top: 12px;
     }
     #footer .wrap .container .go-wrap .go-item > div{
-        bottom: 52px;
+        margin-bottom: -16px;
     }
 }
 
@@ -84,8 +84,13 @@
     }
 
 @media screen and (max-width: 998px) {
+    #footer::after {
+        display: none;
+    }
     #footer .wrap .container .link-wrap {
-        padding: 15px;
+        padding: 15px 22px;
+        margin-left: -22px;
+        width: calc(100% + 44px);
     }
     /*-----footer : 바로가기 메뉴 너비 50%-----*/
     #footer .wrap .container .go-wrap .go-item {
@@ -207,9 +212,6 @@
 @media screen and (max-width: 480px) {
 
     /*-----footer : 바로가기 메뉴 너비 100%-----*/
-    #footer .wrap .container .link-wrap {
-        padding: 10px;
-    }
     #footer .wrap .container .go-wrap .go-item {
         width: 100%;
     }
