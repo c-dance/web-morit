@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <title>국토교통부 홈페이지에 오신 것을 환영합니다</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="송민채, c-dance">
-    <meta name="author-date" content="2021-01">
-    <meta name="keywords" content="반응형 웹, 웹 퍼블리싱, 포트폴리오, 국토교통부, 국토교통부 홈페이지">
-    <meta name="description" content="웹 퍼블리싱 포트폴리오를 목적으로 제작된 반응형 웹 페이지 입니다.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>국토교통부 홈페이지에 오신 것을 환영합니다.</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="Title" content="국토교통부">
+    <meta name="Publisher" content="퍼블리셔">
+    <meta name="Author-date" content="2021-02">
+    <meta name="Author" content="국토교통부">
+    <meta name="Copyright" content="국토교통부">
+    <meta name="Keywords" content="국토교통부, 웹표준, 웹접근성, 국토교통부 반응형 웹사이트">
+    <meta name="Description" content="웹 퍼블리싱 포트폴리오를 목적으로 제작된 반응형 웹 페이지 입니다.">
+
     <!--fontawsome-->
     <script src="https://kit.fontawesome.com/f8a225b89c.js" crossorigin="anonymous"></script>
 
@@ -35,10 +41,291 @@
         <script src="./js/lib/jqPIE.js"></script>    
         <script src="./js/lib/PIE.js"></script>   
     <![endif]-->
-
 </head>
+
 <body>
     <div class="wrapper">
+        <header id="header">
+            <div class="wrap">
+                <div class="container">
+                    <h1 class="logo">
+                        <a href="#"><img src="./img/logo_season04.png" alt="국토교통부"></a>
+                    </h1>
+
+                    <div class="gov_logo">
+                        <a href="#" class="hide">보다나은 정부 새창열림</a>
+                    </div>
+
+                    <div class="search-wrap">
+                        <form action="">
+                            <select name="" id="text">
+                                <option value="통합검색">통합검색</option>
+                                <option value="직원검색">직원검색</option>
+                            </select>
+                            <label for="" class="hide">검색창</label>
+                            <input type="text" name="text" id="text" placeholder="검색어를 입력하세요.">
+                            <div class="search-btn"><a href="$"></a></div>
+                        </form>
+
+                        <!-- 레이어 팝업메뉴 -->
+                        <a href="#" class="hidden-menu"></a>
+                        <!-- 검색버튼 -->
+                        <ul class="search_box">
+                            <li class="box"><a href="">직원검색</a></li>
+                            <li class="box"><a href="">법령검색</a></li>
+                            <li class="box"><a href="">조직안내</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 우측 메뉴-->
+                    <!-- <div class="util-menu">
+                        <ul class="menu-wrap">
+                            <li class="text after"><a href="#">어린이·청소년마당</a></li>
+                            <li class="text"><a href="#">ENGLISH</a></li>
+                        </ul>
+                        <ul class="sns-wrap">
+                            <li class="sns"><a href="#">페이스북</a></li>
+                            <li class="sns"><a href="#">트위터</a></li>
+                            <li class="sns"><a href="#">블로그</a></li>
+                            <li class="sns"><a href="#">유튜브</a></li>
+                            <li class="sns"><a href="#">카카오 스토리</a></li>
+                        </ul>
+                    </div> -->
+                </div><!-- container -->
+                <!-- nav 영역 -->
+                <nav>
+                    <ul class="nav-depth1 clearfix">
+                        <div class="util-menu">
+                            <ul class="menu-wrap">
+                                <li class="text after"><a href="#">어린이·청소년마당</a></li>
+                                <li class="text"><a href="#">ENGLISH</a></li>
+                            </ul>
+                            <ul class="sns-wrap">
+                                <li class="sns"><a href="#">페이스북</a></li>
+                                <li class="sns"><a href="#">트위터</a></li>
+                                <li class="sns"><a href="#">블로그</a></li>
+                                <li class="sns"><a href="#">유튜브</a></li>
+                                <li class="sns"><a href="#">카카오 스토리</a></li>
+                            </ul>
+                        </div>
+                        <!-- 1 -->
+                        <li class="cont1">
+                            <a href="#" class="cont1-tit active">뉴스·소식<i class="triangle"></i></a>
+                            <ul class="nav-depth2 clearfix">
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">보도자료</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">전체</a></li>
+                                        <li class="cont3"><a href="#">국토도시</a></li>
+                                        <li class="cont3"><a href="#">주택토지</a></li>
+                                        <li class="cont3"><a href="#">건설</a></li>
+                                        <li class="cont3"><a href="#">교통물류</a></li>
+                                        <li class="cont3"><a href="#">항공</a></li>
+                                        <li class="cont3"><a href="#">도로철도</a></li>
+                                        <li class="cont3"><a href="#">일반</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">설명·반박자료</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">전체</a></li>
+                                        <li class="cont3"><a href="#">국토도시</a></li>
+                                        <li class="cont3"><a href="#">주택토지</a></li>
+                                        <li class="cont3"><a href="#">건설</a></li>
+                                        <li class="cont3"><a href="#">교통물류</a></li>
+                                        <li class="cont3"><a href="#">항공</a></li>
+                                        <li class="cont3"><a href="#">도로철도</a></li>
+                                        <li class="cont3"><a href="#">일반</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">디지털자료</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">포토뉴스</a></li>
+                                        <li class="cont3"><a href="#">카드뉴스</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">공지사항</a></li>
+                                <li class="cont2"><a href="#" class="cont2-tit">인사발령</a></li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">일자리정보</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">직원채용정보</a></li>
+                                        <li class="cont3"><a href="#">개방형직위</a></li>
+                                        <li class="cont3"><a href="#">산하기관채용</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">자격시험안내</a></li>
+                                <li class="cont2"><a href="#" class="cont2-tit">입찰안내</a></li>
+                                <li class="cont2"><a href="#" class="cont2-tit">사전규격공고</a></li>
+                                <li class="cont2"><a href="#" class="cont2-tit">정부포상</a></li>
+                            </ul>
+                        </li>
+                        <!-- 2 -->
+                        <li class="cont1">
+                            <a href="#" class="cont1-tit active">국민참여<i class="triangle"></i></a>
+                            <ul class="nav-depth2 clearfix">
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">국민소통</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">정책참여</a></li>
+                                        <li class="cont3"><a href="#">국민제안</a></li>
+                                        <li class="cont3"><a href="#">여론광장</a></li>
+                                        <li class="cont3"><a href="#">청렴홍보방</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">규제개혁</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">규제개혁 건의</a></li>
+                                        <li class="cont3"><a href="#">규제현황</a></li>
+                                        <li class="cont3"><a href="#">규제혁신 과제현황</a></li>
+                                        <li class="cont3"><a href="#">규제입증 요청</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">민원마당</a></li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">적극행정</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">제도소개</a></li>
+                                        <li class="cont3"><a href="#">공무원정책 국민추천</a></li>
+                                        <li class="cont3"><a href="#">소극행정 신고</a></li>
+                                        <li class="cont3"><a href="#">자료실</a></li>
+                                        <li class="cont3"><a href="#">적극행정 우수공무원</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">e-클린센터</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">공직자부조리신고</a></li>
+                                        <li class="cont3"><a href="#">공직자부조리신고(익명)</a></li>
+                                        <li class="cont3"><a href="#">비영리법인부조리신고</a></li>
+                                        <li class="cont3"><a href="#">감사정보창구</a></li>
+                                        <li class="cont3"><a href="#">예산낭비신고센터</a></li>
+                                        <li class="cont3"><a href="#">도로이용불편신고</a></li>
+                                        <li class="cont3"><a href="#">부실공사신고</a></li>
+                                        <li class="cont3"><a href="#">불공정 하도급 해소센터</a></li>
+                                        <li class="cont3"><a href="#">화물운송불법신고</a></li>
+                                        <li class="cont3"><a href="#">공익신고안내</a></li>
+                                        <li class="cont3"><a href="#">인사채용비리 신고</a></li>
+                                        <li class="cont3"><a href="#">등록임대 불법행위 신고센터</a></li>
+                                        <li class="cont3"><a href="#">부동산거래질서교란행위신고</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">크리에이터 협업</a></li>
+                            </ul>
+                        </li>
+                        <!-- 3 -->
+                        <li class="cont1">
+                            <a href="#" class="cont1-tit active">정책자료<i class="triangle"></i></a>
+                            <ul class="nav-depth2 clearfix">
+
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">법령정보</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">최근 제개정 법령</a></li>
+                                        <li class="cont3"><a href="#">법령</a></li>
+                                        <li class="cont3"><a href="#">행정규칙(훈령 예규 고시)</a></li>
+                                        <li class="cont3"><a href="#">입법예고 행정예고</a></li>
+                                        <li class="cont3"><a href="#">전자관보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">감사결과공개</a></li>
+                                <li class="cont2"><a href="#" class="cont2-tit">국토교통 정보시스템</a></li>
+                                <li class="cont2 cont2-long">
+                                    <a href="#" class="cont2-tit">항공교통서비스보고서</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">2020년 항공 교통 서비스 보고서</a></li>
+                                        <li class="cont3"><a href="#">2019년 항공 교통 서비스 보고서</a></li>
+                                        <li class="cont3"><a href="#">2018년 항공 교통 서비스 보고서</a></li>
+                                        <li class="cont3"><a href="#">2017년 항공 교통 서비스 보고서</a></li>
+                                        <li class="cont3"><a href="#">2016년 항공 교통 서비스 보고서</a></li>
+                                        <li class="cont3"><a href="#">2015년 항공 교통 서비스 보고서</a></li>
+                                        <li class="cont3"><a href="#">2014년 항공 교통 서비스 보고서</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 4 -->
+                        <li class="cont1">
+                            <a href="#" class="cont1-tit active">정보공개<i class="triangle"></i></a>
+                            <ul class="nav-depth2 clearfix">
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">행정정보공개</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">정보공개제도안내</a></li>
+                                        <li class="cont3"><a href="#">정보공개청구</a></li>
+                                        <li class="cont3"><a href="#">사전정보공개</a></li>
+                                        <li class="cont3"><a href="#">사전공표정보게시판</a></li>
+                                        <li class="cont3"><a href="#">정보목록</a></li>
+                                        <li class="cont3"><a href="#">상습체불건설업자 명단</a></li>
+                                        <li class="cont3"><a href="#">국가안전대진단 점검결과</a></li>
+                                        <li class="cont3"><a href="#">민간투자사업 실시협약</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">협동조합 경영공시</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">경영공시 조회</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">공공데이터 개방</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">국토교통 데이터 통합 채널</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">정책실명제</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">중점관리 대상사업</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2 cont2-long"><a href="#" class="cont2-tit">국토교통부위원회 운영현황</a></li>
+                            </ul>
+                        </li>
+                        <!-- 5 -->
+                        <li class="cont1">
+                            <a href="#" class="cont1-tit active">기관소개<i class="triangle"></i></a>
+                            <ul class="nav-depth2 clearfix">
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">일반현황</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">비전과 목표</a></li>
+                                        <li class="cont3"><a href="#">연혁</a></li>
+                                        <li class="cont3"><a href="#">주요업무계획</a></li>
+                                        <li class="cont3"><a href="#">MI 배너</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">조직 직원안내</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">조직안내</a></li>
+                                        <li class="cont3"><a href="#">부서별직원안내</a></li>
+                                        <li class="cont3"><a href="#">실국별주요업무</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">장관소개</a></li>
+                                <li class="cont2">
+                                    <a href="#" class="cont2-tit">차관소개</a>
+                                    <ul class="nav-depth3">
+                                        <li class="cont3"><a href="#">1차관</a></li>
+                                        <li class="cont3"><a href="#">2차관</a></li>
+                                    </ul>
+                                </li>
+                                <li class="cont2"><a href="#" class="cont2-tit">찾아오시는 길</a></li>
+                                <li class="cont2"><a href="#" class="cont2-tit">관련사이트</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="nav-bg"></div>
+                </nav>
+                <div class="site-box"><a href=""></a></div>
+            </div><!-- //wrap -->
+        </header>
+
+        <!-- 메인영역 시작 -->
         <main id="main">
             <section id="section01">
                 <div class="wrap">
@@ -47,10 +334,14 @@
                             <div class="slider-box round-box">
                                 <div class="slide-view">
                                     <div class="slide-wrap">
-                                        <a href="#none" class="slide"><img src="./img/slide01.jpg" alt="slide photo"></a>
-                                        <a href="#none" class="slide"><img src="./img/slide02.png" alt="slide photo"></a>
-                                        <a href="#none" class="slide"><img src="./img/slide03.jpg" alt="slide photo"></a>
-                                        <a href="#none" class="slide"><img src="./img/slide04.jpg" alt="slide photo"></a>
+                                        <a href="#none" class="slide"><img src="./img/slide01.jpg"
+                                                alt="slide photo"></a>
+                                        <a href="#none" class="slide"><img src="./img/slide02.png"
+                                                alt="slide photo"></a>
+                                        <a href="#none" class="slide"><img src="./img/slide03.jpg"
+                                                alt="slide photo"></a>
+                                        <a href="#none" class="slide"><img src="./img/slide04.jpg"
+                                                alt="slide photo"></a>
                                     </div>
                                 </div>
                                 <div class="slide-btns">
@@ -65,55 +356,61 @@
                             </div>
                         </section>
                         <section class="news-wrap clearfix">
-                                <article class="news round-box">
-                                    <a>
-                                        <img src="./img/news1.jpg" alt="photo news">
-                                        <div class="cover">
-                                            <strong class="cover-icon">포토뉴스</strong>
-                                            <i></i>
-                                            <span>공공주도3080+, 대도시권 주택공급 획기적 확대방안 발표</span>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="news round-box">
-                                    <a class="video-news-img">
-                                        <img src="./img/news2.jpg" alt="video news">
-                                        <div class="cover">
-                                            <strong class="cover-icon">동영상뉴스</strong>
-                                            <i></i>
-                                            <span>우리나라 최초의 배달 품목은 평양냉면이다?</span>
-                                        </div>
-                                    </a>
-                                    <a href="" class="video-news-btn"><i></i></a>
-                                </article>
-                                <article class="news round-box">
-                                    <a>
-                                        <img src="./img/news3.jpg" alt="card news">
-                                        <div class="cover">
-                                            <strong class="cover-icon">카드뉴스</strong>
-                                            <i></i>
-                                            <span>서울에만 분당 3배 규모,32만 가구 공급!</span>
-                                        </div>
-                                    </a>
-                                </article>
-                                <article class="news round-box">
-                                    <div class="slide-view">
-                                        <div class="slide-wrap">
-                                            <a href="#non3" class="slide slide0"><img src="./img/news4_01.jpg" alt="slide photo"></a>
-                                            <a href="#non3" class="slide slide1"><img src="./img/news4_02.jpg" alt="slide photo"></a>
-                                            <a href="#non3" class="slide slide2"><img src="./img/news4_03.jpg" alt="slide photo"></a>
-                                            <a href="#non3" class="slide slide3"><img src="./img/news4_04.jpg" alt="slide photo"></a>
-                                            <a href="#non3" class="slide slide4"><img src="./img/news4_01.jpg" alt="slide photo"></a>
-                                        </div>
+                            <article class="news round-box">
+                                <a>
+                                    <img src="./img/news1.jpg" alt="photo news">
+                                    <div class="cover">
+                                        <strong class="cover-icon">포토뉴스</strong>
+                                        <i></i>
+                                        <span>공공주도3080+, 대도시권 주택공급 획기적 확대방안 발표</span>
                                     </div>
-                                    <div class="top-cover clearfix">
-                                        특집
-                                        <span>
-                                            <i class="active"></i><i></i><i></i><i></i>
-                                        </span>
+                                </a>
+                            </article>
+                            <article class="news round-box">
+                                <a class="video-news-img">
+                                    <img src="./img/news2.jpg" alt="video news">
+                                    <div class="cover">
+                                        <strong class="cover-icon">동영상뉴스</strong>
+                                        <i></i>
+                                        <span>우리나라 최초의 배달 품목은 평양냉면이다?</span>
                                     </div>
-                                </article>
+                                </a>
+                                <a href="" class="video-news-btn"><i></i></a>
+                            </article>
+                            <article class="news round-box">
+                                <a>
+                                    <img src="./img/news3.jpg" alt="card news">
+                                    <div class="cover">
+                                        <strong class="cover-icon">카드뉴스</strong>
+                                        <i></i>
+                                        <span>서울에만 분당 3배 규모,32만 가구 공급!</span>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="news round-box">
+                                <div class="slide-view">
+                                    <div class="slide-wrap">
+                                        <a href="#non3" class="slide slide0"><img src="./img/news4_01.jpg"
+                                                alt="slide photo"></a>
+                                        <a href="#non3" class="slide slide1"><img src="./img/news4_02.jpg"
+                                                alt="slide photo"></a>
+                                        <a href="#non3" class="slide slide2"><img src="./img/news4_03.jpg"
+                                                alt="slide photo"></a>
+                                        <a href="#non3" class="slide slide3"><img src="./img/news4_04.jpg"
+                                                alt="slide photo"></a>
+                                        <a href="#non3" class="slide slide4"><img src="./img/news4_01.jpg"
+                                                alt="slide photo"></a>
+                                    </div>
+                                </div>
+                                <div class="top-cover clearfix">
+                                    특집
+                                    <span>
+                                        <i class="active"></i><i></i><i></i><i></i>
+                                    </span>
+                                </div>
+                            </article>
                         </section>
+                        <!-- 섹션1 탭메뉴 -->
                         <section class="tab-wrap">
                             <div class="tab-box round-box">
                                 <div class="tab-btn">
@@ -159,9 +456,159 @@
                     </div>
                 </div>
             </section>
+            <!-- section02 영역 -->
             <section id="section02">
-                section02
+                <div class="wrap">
+                    <div class="container clearfix">
+                        <div class="area01 round-box">
+                            <div class="img-wrap">
+                                <a href="#">
+                                    <img src="./img/area01.jpg" alt="국민이 정책을 만듭니다.">
+                                </a>
+                            </div>
+                            <!-- 열린 장관실 -->
+                            <div class="info-wrap clearfix">
+                                <ul class="minister-wrap">
+                                    <li class="minister">
+                                        <a href="#">
+                                            <strong class="title">열린 장관실</strong>
+                                            <p class="text">
+                                                국민 삶의 질 향상과 안전을 위해<br>
+                                                최선을 다하겠습니다
+                                            </p>
+                                            <div class="arrow"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="list-wrap">
+                                    <li class="list list01"><a href="">국민제안</a></li>
+                                    <li class="list list02"><a href="">민원마당</a></li>
+                                    <li class="list list03"><a href="">적극행정</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- area02 영역 -->
+                        <div class="area02 round-box">
+                            <div class="tab">
+                                <section class="sec-bbs on">
+                                    <h2 class="menu">공지사항</h2>
+                                    <div class="left-cont">
+                                        <div class="date-wrap">
+                                            <div class="date-box">
+                                                <span class="month">2021.02<span class="date"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span class="">교통영향평가대행자 등록 공고</span>
+                                    </div>
+                                    <div class="right-cont">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span>남부내륙철도(김천~거제간) 전략환경영향평가서(초안) 공청회 개최 공고</span>
+                                                    <p>02-23</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                            <!-- area02 법령정보 -->
+                            <div class="info-cont clearfix">
+                                <ul class="box-wrap clearfix">
+                                    <li class="box box-01"><a href="">법령정보</a></li>
+                                    <li class="box box-02"><a href="">국토교통<br>정보시스템</a></li>
+                                </ul>
+                                <!-- area02 슬라이드 -->
+                                <article class="news round-box">
+                                    <div class="slide-view">
+                                        <div class="slide-wrap">
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide01.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide02.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide03.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide04.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide05.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide06.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide07.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide08.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide09.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#non3" class="slide slide0"><img src="./img/info_slide10.jpg"
+                                                    alt="slide photo"></a>
+                                        </div>
+                                    </div>
+                                    <div class="top-cover clearfix">
+                                        알립판
+                                        <span>
+                                            <i class="active"></i><i></i><i></i><i></i>
+                                        </span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <!-- area03 시작 -->
+                        <div class="area03">
+                            <span class="policy-tit"><a href="#"></a></span>
+                            <!-- 호버시 바뀜 -->
+                            <ul class="policy-cont round-box">
+                                <!-- 1 -->
+                                <li class="list list01" class="on">
+                                    <a href="#">
+                                        <strong class="tit">국토도시</strong>
+                                        <p class="text">
+                                            대한민국 모두를 생각하는 국토 및 도시<br>
+                                            정책을 확인하실 수 있습니다.
+                                        </p>
+                                        <a href="#" class="arrow">화살표</a>
+                                    </a>
+                                </li>
+                                <!-- 2 우측메뉴 -->
+                                <ul class="right">
+                                    <li><a href="#">국토도시</a></li>
+                                    <li><a href="#">주택도지</a></li>
+                                    <li><a href="#">건설</a></li>
+                                    <li><a href="#">교통물류</a></li>
+                                    <li><a href="#">항공</a></li>
+                                    <li><a href="#">도로철도</a></li>
+                                </ul>
+                            </ul>
+                            <!-- 3 직원안내/조직안내 -->
+                            <div class="guide-cont round-box">
+                                <ul class="wrap clearfix">
+                                    <li class="list list01"><a href="">직원안내</a></li>
+                                    <li class="list list02"><a href="">조직안내</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- area04 시작 -->
+                        <div class="area04 clearfix">
+                            <ul class="box-cont round-box">
+                                <li class="box box01"><a href="">업무계획</a></li>
+                                <li class="box box02"><a href="">도시재생</a></li>
+                                <li class="box box03"><a href="">규제개혁신문고</a></li>
+                                <li class="box box04"><a href="">광역교통</a></li>
+                                <li class="box box05"><a href="">주거급여</a></li>
+                                <li class="box box06"><a href="">렌트홈</a></li>
+                            </ul>
+                            <ul class="list-cont round-box">
+                                <li class="list list01"><a href="">실거래 공개</a></li>
+                                <li class="list list02"><a href="">공시가격알리미</a></li>
+                                <li class="list list03"><a href=""></a></li>
+                                <li class="list list04"><a href=""></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- //container -->
+                </div><!-- //wrap -->
             </section>
+            <!-- section03 영역 -->
             <section id="section03">
                 <div class="wrap">
                     <div class="container">
@@ -200,9 +647,9 @@
                         <a href="#none"><span>누리집 개선의견</span></a>
                     </div>
                     <div class="go-wrap clearfix">
-                        <div class="go-item active">
+                        <div class="go-item">
                             <a href="">소속기관 바로 가기<i></i></a>
-                            <div> 
+                            <div>
                                 <ul>
                                     <li><a href="">대도시권광역교통위원회</a></li>
                                     <li><a href="">국토교통인재개발원</a></li>
@@ -220,7 +667,7 @@
                                     <li><a href="">항공철도사고조사위원회</a></li>
                                     <li><a href="">철도특별사법경찰대</a></li>
                                     <li><a href="">국토지리정보원</a></li>
-                                 </ul>
+                                </ul>
                             </div>
                         </div>
                         <div class="go-item">
@@ -272,4 +719,5 @@
     </div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

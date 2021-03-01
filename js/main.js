@@ -1,6 +1,7 @@
-$(document).ready(function(){
-
-    var init = function(){
+$(document).ready(function () {
+    
+    var init = function () {
+        navFn();
         mainSlideFn();
         newsSlideFn();
         bannerFn();
@@ -8,23 +9,127 @@ $(document).ready(function(){
         tabFn();
     };
 
-    var tabFn = function(){
+    var navFn = function(){
+
+        var $nav = $('#header nav'),
+            $navTit = $('#header .nav-depth1 .cont1'),
+            $navBg = $('#header .nav-bg'),
+            $navDepth = $('#header .nav-depth2'),
+            $navDepth3 = $('#header .nav-depth3'),
+            $navTit2 = $('#header nav .cont2-tit'),
+            $siteBox = $('#header .site-box'),
+            $depth = null;
+
+        var $headerHeight = $('#header .container').innerHeight();
+        var isMobile = $(window).innerWidth() >= 998 ? false : true;
+
+        if(isMobile){
+            $nav.addClass('mobile');
+            $siteBox.addClass('mobile');
+        }
+        $navTit.on({
+            mouseenter: function(e){
+                e.preventDefault();
+                if(isMobile) return false;
+                $depth = $(this).find('.nav-depth2');
+                $navBg.css('height', function(){
+                    return $depth.innerHeight();
+                })
+                $navBg.stop().show();
+                $depth.stop().show();
+                $(this).find('.triangle').stop().show();
+                $(this).find('.cont1-tit').css('color', 'yellow');
+            },
+            mouseleave: function(e){
+                e.preventDefault();
+                if(isMobile) return false;
+                $(this).find('.cont1-tit').css('color', 'white');
+                $(this).find('.triangle').stop().hide();
+                $(this).find('.nav-depth2').stop().hide();
+                $navBg.stop().hide();
+            }, 
+            click: function(e){
+                e.preventDefault();
+                if(!isMobile) return false;
+                $navDepth.stop().hide();
+                $(this).find('.nav-depth2').stop().show();
+            }
+        })
+
+        $navTit2.on({
+            click: function(e){
+                e.preventDefault();
+                if(!isMobile) return false;
+                $navDepth3.removeClass('m-active');
+                $(this).next().addClass('m-active');
+                
+            }
+        })
+
+        $siteBox.on({
+            click: function(e){
+                e.preventDefault();
+                if(!isMobile) return false;
+                $nav.css('display', 'block');
+            }
+        })
+
+        $nav.on({
+            click: function(e){
+                e.preventDefault();
+                if(!isMobile) return false;
+                if(e.offsetX>=300) $nav.css('display', 'none');
+            }
+        })
+
+
+        $(window).scroll(function(e){
+            e.preventDefault();
+            if(isMobile) return false;
+            if($(this).scrollTop()>=$headerHeight) $nav.addClass('fixed');
+            else $nav.removeClass('fixed');
+        });
+
+        $(window).resize(function(e){
+            e.preventDefault();
+            if($(this).innerWidth()>=998){
+                if(isMobile) {
+                    $navDepth3.removeClass('m-active');
+                    $nav.removeClass('mobile');
+                    $siteBox.removeClass('mobile');
+                    isMobile = !isMobile;
+                }
+            }
+            else{
+                if(!isMobile){
+                    isMobile =!isMobile;
+                    if($nav.hasClass('fixed')) $nav.removeClass('fixed');
+                    //triagle class 제거, css 호버 효과 제거
+                    $siteBox.addClass('mobile');
+                    $nav.addClass('mobile');
+                } 
+            }
+        })
+
+    };
+
+    var tabFn = function () {
         var $tabBtn = $('#section01 .tab-btn .btn');
         var $tabItem = $('#section01 .tab-item');
 
-        $tabBtn.each(function(idx){
-            $(this).click(function(e){
+        $tabBtn.each(function (idx) {
+            $(this).click(function (e) {
                 $tabBtn.removeClass('active');
                 $tabItem.removeClass('active');
                 $(this).addClass('active');
-                setTimeout(function(){
+                setTimeout(function () {
                     $tabItem.eq(idx).addClass('active');
-                },150);
+                }, 150);
             })
         })
     };
 
-    var mainSlideFn = function(){
+    var mainSlideFn = function () {
         var $slideBtns = $('#section01 .slider-wrap .slide-btns button'),
             $prevBtn = $slideBtns.eq(0),
             $nextBtn = $slideBtns.eq(2),
@@ -37,46 +142,30 @@ $(document).ready(function(){
             nextIdx = 0,
             isPaused = false;
 
-        var fadeOutFn = function(fromSlide, toSldie){
+        var fadeOutFn = function (fromSlide, toSldie) {
             fromSlide.animate({
                 opacity: 0
-            },500, 'linear');
+            }, 500, 'linear');
             toSldie.animate({
                 opacity: 1
-            },700, 'linear');
+            }, 700, 'linear');
         };
 
-        var handleNumTxt = function(){
+        var handleNumTxt = function () {
             var newNum = '';
-            if($currentIdx<10) newNum = '0' + ($currentIdx+1);
-            else newNum = numTxt+($currentIdx+1);
+            if ($currentIdx < 10) newNum = '0' + ($currentIdx + 1);
+            else newNum = numTxt + ($currentIdx + 1);
             $numText.text(newNum);
         };
-        
-        $prevBtn.click(function(e){
+
+        $prevBtn.click(function (e) {
             e.preventDefault();
 
             $slideBtns.removeClass('active');
             $(this).addClass('active');
 
-            if($currentIdx==0) nextIdx = $slideLength-1;
+            if ($currentIdx == 0) nextIdx = $slideLength - 1;
             else nextIdx = $currentIdx - 1;
-
-            clearInterval(startAutoFade);
-            fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));          
-            $currentIdx = nextIdx;
-            handleNumTxt();
-            handleAutoFade();
-        });
-
-        $nextBtn.click(function(e){
-            e.preventDefault();
-
-            $slideBtns.removeClass('active');
-            $(this).addClass('active');
-
-            if($currentIdx==$slideLength-1) nextIdx = 0;
-            else nextIdx = $currentIdx+1;
 
             clearInterval(startAutoFade);
             fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));
@@ -85,24 +174,40 @@ $(document).ready(function(){
             handleAutoFade();
         });
 
-        $pauseBtn.click(function(e){
+        $nextBtn.click(function (e) {
+            e.preventDefault();
+
+            $slideBtns.removeClass('active');
+            $(this).addClass('active');
+
+            if ($currentIdx == $slideLength - 1) nextIdx = 0;
+            else nextIdx = $currentIdx + 1;
+
+            clearInterval(startAutoFade);
+            fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));
+            $currentIdx = nextIdx;
+            handleNumTxt();
+            handleAutoFade();
+        });
+
+        $pauseBtn.click(function (e) {
             e.preventDefault();
             $slideBtns.removeClass('active');
-            if(isPaused) {
+            if (isPaused) {
                 $(this).removeClass('active');
                 isPaused = false;
                 handleAutoFade();
-            }else {
+            } else {
                 $(this).addClass('active');
                 clearInterval(startAutoFade);
                 isPaused = true;
             }
         });
 
-        var handleAutoFade = function(){
-            startAutoFade = setInterval(function(){ 
-                if($currentIdx>=$slideLength-1) nextIdx = 0;
-                else nextIdx = $currentIdx+1;
+        var handleAutoFade = function () {
+            startAutoFade = setInterval(function () {
+                if ($currentIdx >= $slideLength - 1) nextIdx = 0;
+                else nextIdx = $currentIdx + 1;
                 fadeOutFn($slide.eq($currentIdx), $slide.eq(nextIdx));
                 $currentIdx = nextIdx;
                 handleNumTxt();
@@ -114,65 +219,67 @@ $(document).ready(function(){
 
     };
 
-    var newsSlideFn = function(){
+    var newsSlideFn = function () {
 
         var $slideWrap = $('#section01 .news:nth-child(4) .slide-wrap'),
             $slide = $slideWrap.find('.slide'),
             $slideWidth = $slide.innerWidth(),
-            $slideLength = $slide.length-1,//4
+            $slideLength = $slide.length - 1, //4
             $slideBtn = $('#section01 .news:nth-child(4) .top-cover i');
-            
+
         var $currentIdx = 0;
-            $targetIdx = 0,
+        $targetIdx = 0,
             positionX = 0;
 
-        $slideBtn.each(function(idx){
-            $(this).click(function(e){
+        $slideBtn.each(function (idx) {
+            $(this).click(function (e) {
                 e.preventDefault();
 
-                if(idx===$currentIdx) return false;
+                if (idx === $currentIdx) return false;
 
                 clearInterval(setAutoSlide);
                 $targetIdx = idx;
                 shiftSlideFn();
                 $currentIdx = $targetIdx;
-                setTimeout(function(){
+                setTimeout(function () {
                     autoSlideFn();
-                },1000)
-                
+                }, 1000)
+
             })
         })
 
-        var shiftSlideFn = function(){
+        var shiftSlideFn = function () {
 
             $slideBtn.eq($currentIdx).removeClass('active');
             $slideBtn.eq($targetIdx).addClass('active');
 
-            positionX = - $slideWidth * ($currentIdx);
+            positionX = -$slideWidth * ($currentIdx);
 
-            if($currentIdx >= $slideLength-1 && $targetIdx===0){ 
+            if ($currentIdx >= $slideLength - 1 && $targetIdx === 0) {
                 $slideWrap.stop().animate({
-                    left : positionX - $slideWidth + 'px'
-                },800,'swing', function(){
-                    $slideWrap.css({'left': 0});
+                    left: positionX - $slideWidth + 'px'
+                }, 800, 'swing', function () {
+                    $slideWrap.css({
+                        'left': 0
+                    });
                 });
-            }else{
+            } else {
                 $slideWrap.stop().animate({
-                    left : positionX + $slideWidth * ($currentIdx - $targetIdx) + 'px'
-                },800,'swing');
+                    left: positionX + $slideWidth * ($currentIdx - $targetIdx) + 'px'
+                }, 800, 'swing');
             }
         };
 
-        var autoSlideFn = function(){
-            setAutoSlide = setInterval(function(){
-                $targetIdx ++;
-                if($currentIdx >= $slideLength-1) $targetIdx = 0;
+        var autoSlideFn = function () {
+            setAutoSlide = setInterval(function () {
+                $targetIdx++;
+                if ($currentIdx >= $slideLength - 1) $targetIdx = 0;
                 shiftSlideFn();
                 $currentIdx = $targetIdx;
-            },2000);
+            }, 2000);
         }
 
-        $(window).resize(function(e){
+        $(window).resize(function (e) {
             e.preventDefault();
             $slideWidth = $slide.innerWidth();
         })
@@ -181,7 +288,7 @@ $(document).ready(function(){
 
     };
 
-    var bannerFn = function(){
+    var bannerFn = function () {
 
         var $bannerWrap = $('#section03 .banner-wrap'),
             $banner = $('#section03 .banner-item'),
@@ -190,38 +297,38 @@ $(document).ready(function(){
         var moveX = $banner.first().innerWidth();
         var isPaused = false;
 
-        $bannerBtns.eq(0).click(function(e){
+        $bannerBtns.eq(0).click(function (e) {
             e.preventDefault();
-            if(!isPaused){
+            if (!isPaused) {
                 clearInterval(setAutoBanner);
                 $bannerBtns.eq(1).addClass('active');
                 isPaused = true;
-            }else{
+            } else {
                 $bannerBtns.eq(2).removeClass('active');
             }
             $(this).addClass('active');
             toPrevShift();
         });
-        $bannerBtns.eq(1).click(function(e){//pouse
+        $bannerBtns.eq(1).click(function (e) { //pouse
             e.preventDefault();
-            if(!isPaused){ // -> pause slide
+            if (!isPaused) { // -> pause slide
                 clearInterval(setAutoBanner);
                 $(this).addClass('active');
                 isPaused = true;
-            }else{ // -> restart slide
+            } else { // -> restart slide
                 autoBannerFn();
                 $bannerBtns.removeClass('active');
                 isPaused = false;
-            }   
-            
+            }
+
         });
-        $bannerBtns.eq(2).click(function(e){
+        $bannerBtns.eq(2).click(function (e) {
             e.preventDefault();
-            if(!isPaused){ //-> pause slide
+            if (!isPaused) { //-> pause slide
                 clearInterval(setAutoBanner);
                 $bannerBtns.eq(1).addClass('active');
                 isPaused = true;
-            }else{ // -> remove btnBorder
+            } else { // -> remove btnBorder
                 $bannerBtns.eq(0).removeClass('active');
             }
             $(this).addClass('active');
@@ -229,42 +336,42 @@ $(document).ready(function(){
         });
 
         /* initialize banner slide */
-        var setBanner = function(){
+        var setBanner = function () {
             $banner.last().after($banner.first().clone());
             $banner.first().before($banner.last().clone());
-            $bannerWrap.css('left', - moveX+'px');
+            $bannerWrap.css('left', -moveX + 'px');
         }
 
-        var toNextShift = function(){
+        var toNextShift = function () {
             $banner = $('#section03 .banner-item');
             $banner.first().detach();
-            $bannerWrap.css('left','0'); 
+            $bannerWrap.css('left', '0');
 
             $bannerWrap.animate({
-                'left' : - moveX + 'px'
+                'left': -moveX + 'px'
             }, 600, 'linear');
 
             $banner.last().after($banner.eq(2).clone());
-   
+
         };
 
-        var toPrevShift = function(){
+        var toPrevShift = function () {
             $banner = $('#section03 .banner-item');
-            $banner.first().before($banner.eq($banner.length-3).clone());
-            $banner.last().detach(); 
-            $bannerWrap.css('left',- moveX*2 + 'px'); 
+            $banner.first().before($banner.eq($banner.length - 3).clone());
+            $banner.last().detach();
+            $bannerWrap.css('left', -moveX * 2 + 'px');
 
             $bannerWrap.animate({
-                'left' : - moveX + 'px'
+                'left': -moveX + 'px'
             }, 600, 'linear');
 
         };
 
-        var autoBannerFn = function(){
+        var autoBannerFn = function () {
 
-            setAutoBanner = setInterval(function(){
+            setAutoBanner = setInterval(function () {
                 toPrevShift();
-            },3000)
+            }, 3000)
         }
 
         setBanner();
@@ -273,24 +380,20 @@ $(document).ready(function(){
     };
 
 
-    var footerFn = function(){
-        var $goBtn = $('#footer .go-item > a'),
-            $goMenu = $('#footer .go-item > div');
+    var footerFn = function () {
+        var $goBtn = $('#footer .go-item > a, #footer .go-item > a > i'),
+            $goItem = $('#footer .go-item');
 
-        $goBtn.click(function(e){
+        $goBtn.click(function (e) {
             e.preventDefault();
-            // $goMenu.removeClass('active'); 
-             
-            $(this).next('div').delay(3000).toggleClass('active');
-            $(this).toggleClass('active');
-
+            $(this).parent().toggleClass('active');
         })
 
-        $('body').click(function(e){
+        $('body').click(function (e) {
             e.preventDefault();
-            if(!$goBtn.is(e.target)) $goMenu.removeClass('active');
+            if (!$goBtn.is(e.target)) $goItem.removeClass('active');
         });
-        
+
     };
 
     init();
