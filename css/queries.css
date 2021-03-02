@@ -1,6 +1,21 @@
 @charset "UTF-8";
 
 @media screen and (max-width: 1444px) {
+    #header .wrap  .container {
+        width: calc(100% - 44px);
+    }
+    #header .wrap nav .nav-depth1 {
+        width: calc(100% - 44px);
+    }
+    .search-wrap {
+        margin-left: 1.3888%;
+    }
+    .search-wrap .search {
+        width: 340px;
+    }
+    .search-wrap .search_box {
+        margin-left: 5px;
+    }
 
     #header .wrap nav .nav-depth1 .cont1 .nav-depth2 {
         padding: 20px 20px;
@@ -40,11 +55,9 @@
 }
 
 @media screen and (max-width: 1280px) {
-
-    #header .wrap nav .nav-depth1 .cont1 {
-        width: 16.6593%;
+    .search-wrap {
+        left: 270px;
     }
-
     #header .wrap nav .cont1 .nav-depth2 .cont2:nth-child(5) {
         height: auto;
         min-height: auto;
@@ -88,6 +101,36 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+
+    #header .wrap {
+        height: 135px;
+    }
+    #header .wrap .container .logo a {
+        background: url(../img/mobile_logo.png) 50% 50% no-repeat;
+    }
+    .search-wrap {
+        padding: 33px 0 0;
+        left: calc(50% - 205px);
+        margin: 0;
+    }
+    .search-wrap .search {
+        margin-bottom: 5px;
+    }
+    .search-wrap .search_box {
+        float: none;
+        margin-left: 150px;
+    }
+    #header .wrap nav .util-menu {
+        position: absolute;
+        top: -134px;
+    }
+
+    #header .wrap nav .nav-depth1 .cont1 {
+        width: 17.75%;
+    }
+}
+
 @media screen and (max-width: 1024px) {
 
     /*-----section01 : padding : 40px 22px-----*/
@@ -119,7 +162,87 @@
 
         /*-----header : nav mobile 변형-----*/
 
+        #header {
+            height: 76px;
+            border-bottom: 1px solid #999;
+        }
+        #header .wrap {
+            height: 76px;
+        }
+        #header .wrap .container .logo {
+            left: calc(50% - 138px);
+            width: 276px;
+            height: 75px;
+        }
+        #header .wrap .container .logo a {
+            background: url(../img/mobile_logo_center.png) -50% 50% no-repeat;
+        }
+        #header .wrap .m-search-btn { display:block;}
 
+        .search-wrap {
+            display: none;
+            padding: 22px;
+            top: 76px;
+            left: -20px;
+            width: 100vw;
+            height: 130px;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .search-wrap.mobile-active {
+            display: block;
+        }
+        .search-wrap .gov_logo {
+            display: none;
+        }
+        .search-wrap .search {
+            float: none;
+            width: 100%;
+            height: 45px;
+        }
+        .search-wrap .search form {
+            padding: 3px 5px 0;
+            width: 100%;
+            border-radius: 2px;
+            border: 2px solid #006bb7;
+            overflow: hidden;
+        }
+        input[type='text'] {
+            width: 80%;
+        }
+        .search-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            width: 80px;
+            height: 100%;
+            background: #006bb7;
+        }
+        .search-btn::after {
+            top: 10px;
+            left: 20px;
+            content: '검색';
+            color: #fff;
+            background: transparent;
+        }
+        .search-wrap .search .hidden-menu {
+            display: none;
+        }
+        .search-wrap .search_box {
+            margin-left: calc(50% - 160px);
+        }
+        
+        .search-wrap .search_box .box {
+            display: inline-block;
+            width: 90px;
+            height: 100%;
+            line-height: 45px;
+            border-radius:0;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #fff;
+        }
 
         /*-----footer : 바로가기 메뉴 너비 50%-----*/
         #footer::after {

@@ -17,8 +17,10 @@ $(document).ready(function () {
             $navDepth = $('#header .nav-depth2'),
             $navDepth3 = $('#header .nav-depth3'),
             $navTit2 = $('#header nav .cont2-tit'),
+            $navCont2 = $('#header nav .cont2'),
             $siteBox = $('#header .site-box'),
-            $depth = null;
+            $searchWrap = $('#header .search-wrap'),
+            $mSearchBtn = $('#header .m-search-btn');
 
         var $headerHeight = $('#header .container').innerHeight();
         var isMobile = $(window).innerWidth() >= 998 ? false : true;
@@ -27,31 +29,25 @@ $(document).ready(function () {
             $nav.addClass('mobile');
             $siteBox.addClass('mobile');
         }
+
         $navTit.on({
             mouseenter: function(e){
                 e.preventDefault();
                 if(isMobile) return false;
-                $depth = $(this).find('.nav-depth2');
-                $navBg.css('height', function(){
-                    return $depth.innerHeight();
-                })
+                $(this).addClass('show');
+                $navBg.css('height', $(this).find('.nav-depth2').innerHeight()+'');
                 $navBg.stop().show();
-                $depth.stop().show();
-                $(this).find('.triangle').stop().show();
-                $(this).find('.cont1-tit').css('color', 'yellow');
             },
             mouseleave: function(e){
                 e.preventDefault();
                 if(isMobile) return false;
-                $(this).find('.cont1-tit').css('color', 'white');
-                $(this).find('.triangle').stop().hide();
-                $(this).find('.nav-depth2').stop().hide();
+                $(this).removeClass('show');
                 $navBg.stop().hide();
             }, 
             click: function(e){
                 e.preventDefault();
                 if(!isMobile) return false;
-                $navDepth.stop().hide();
+                $navDepth.removeClass('show');
                 $(this).find('.nav-depth2').stop().show();
             }
         })
@@ -60,9 +56,8 @@ $(document).ready(function () {
             click: function(e){
                 e.preventDefault();
                 if(!isMobile) return false;
-                $navDepth3.removeClass('m-active');
-                $(this).next().addClass('m-active');
-                
+                $navCont2.removeClass('m-active');
+                $(this).parent().addClass('m-active');             
             }
         })
 
@@ -70,7 +65,7 @@ $(document).ready(function () {
             click: function(e){
                 e.preventDefault();
                 if(!isMobile) return false;
-                $nav.css('display', 'block');
+                $nav.css({'display':'block', 'left':'0'});
             }
         })
 
@@ -78,7 +73,14 @@ $(document).ready(function () {
             click: function(e){
                 e.preventDefault();
                 if(!isMobile) return false;
-                if(e.offsetX>=300) $nav.css('display', 'none');
+                if(e.offsetX>=300) $nav.css({'display':'none', 'left':'-100vw'});
+            }
+        })
+
+        $mSearchBtn.on({
+            click: function(e){
+                e.preventDefault();
+                $searchWrap.toggleClass('mobile-active');
             }
         })
 
@@ -86,8 +88,14 @@ $(document).ready(function () {
         $(window).scroll(function(e){
             e.preventDefault();
             if(isMobile) return false;
-            if($(this).scrollTop()>=$headerHeight) $nav.addClass('fixed');
-            else $nav.removeClass('fixed');
+            if($(this).scrollTop()>=$headerHeight) {
+                $nav.addClass('fixed');
+                $siteBox.addClass('fixed');
+            }
+            else {
+                $nav.removeClass('fixed');
+                $siteBox.removeClass('fixed');
+            }
         });
 
         $(window).resize(function(e){
@@ -96,17 +104,20 @@ $(document).ready(function () {
                 if(isMobile) {
                     $navDepth3.removeClass('m-active');
                     $nav.removeClass('mobile');
+                    $nav.css({'display':'block', 'left':'0'});
                     $siteBox.removeClass('mobile');
+                    $searchWrap.removeClass('mobile-active');
                     isMobile = !isMobile;
                 }
             }
             else{
                 if(!isMobile){
-                    isMobile =!isMobile;
                     if($nav.hasClass('fixed')) $nav.removeClass('fixed');
-                    //triagle class 제거, css 호버 효과 제거
+                    $nav.css({'display':'none', 'left':'-100vw'});
+                    $navTit.removeClass('show');
                     $siteBox.addClass('mobile');
                     $nav.addClass('mobile');
+                    isMobile =!isMobile;
                 } 
             }
         })
