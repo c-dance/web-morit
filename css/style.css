@@ -2710,3 +2710,14 @@ input[type='text'] {
         transform: rotate(359deg);
     }
 }
+
+@keyframes fadein {
+    from {
+        background: #fff;
+        opacity: .5;
+    }
+    to {
+        background: #000;
+        opacity: .2;
+    }
+}
