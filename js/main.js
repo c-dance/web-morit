@@ -4,6 +4,8 @@ $(document).ready(function () {
         navFn();
         mainSlideFn();
         newsSlideFn();
+        newsSlideFn02();
+        policyFn();
         bannerFn();
         footerFn();
         tabFn();
@@ -126,15 +128,32 @@ $(document).ready(function () {
 
     var tabFn = function () {
         var $tabBtn = $('#section01 .tab-btn .btn');
-        var $tabItem = $('#section01 .tab-item');
+        var $tabBtn02 = $('#section02 .tab-btn .btn');
+        var $targetItem = null;
 
         $tabBtn.each(function (idx) {
+
             $(this).click(function (e) {
-                $tabBtn.removeClass('active');
-                $tabItem.removeClass('active');
+                e.preventDefault();
+                $(this).parent().find('.btn').removeClass('active');
+                $targetItem = $(this).parents('.tab-box').find('.tab-item');
+                $targetItem.removeClass('active');
                 $(this).addClass('active');
                 setTimeout(function () {
-                    $tabItem.eq(idx).addClass('active');
+                    $targetItem.eq(idx).addClass('active');
+                }, 150);
+            })
+        })
+
+        $tabBtn02.each(function(idx){
+            $(this).click(function (e) {
+                e.preventDefault();
+                $(this).parent().find('.btn').removeClass('active');
+                $targetItem = $(this).parents('.tab-box').find('.tab-item');
+                $targetItem.removeClass('active');
+                $(this).addClass('active');
+                setTimeout(function () {
+                    $targetItem.eq(idx).addClass('active');
                 }, 150);
             })
         })
@@ -239,7 +258,7 @@ $(document).ready(function () {
             $slideBtn = $('#section01 .news:nth-child(4) .top-cover i');
 
         var $currentIdx = 0;
-        $targetIdx = 0,
+            $targetIdx = 0,
             positionX = 0;
 
         $slideBtn.each(function (idx) {
@@ -298,6 +317,147 @@ $(document).ready(function () {
         autoSlideFn();
 
     };
+
+    var newsSlideFn02 = function () {
+
+        var $slideWrap02 = $('#section02 .area02 .slide-wrap'),
+            $slide02 = $slideWrap02.find('.slide'),
+            $slideWidth02 = $slide02.innerWidth(),
+            $slideLength02 = $slide02.length - 1, //4
+            $slideBtn02 = $('#section02 .area02 .top-cover i');
+
+        var $currentIdx02 = 0;
+            $targetIdx02 = 0,
+            positionX02 = 0;
+
+        $slideBtn02.each(function (idx) {
+            $(this).click(function (e) {
+                e.preventDefault();
+
+                if (idx === $currentIdx02) return false;
+
+                clearInterval(setAutoSlide02);
+                $targetIdx02 = idx;
+                shiftSlideFn02();
+                $currentIdx02 = $targetIdx02;
+                setTimeout(function () {
+                    autoSlideFn02();
+                }, 1000)
+
+            })
+        })
+
+        var shiftSlideFn02 = function () {
+
+            $slideBtn02.eq($currentIdx02).removeClass('active');
+            $slideBtn02.eq($targetIdx02).addClass('active');
+
+            positionX02 = -$slideWidth02 * ($currentIdx02);
+
+            if ($currentIdx02 >= $slideLength02 - 1 && $targetIdx02 === 0) {
+                $slideWrap02.stop().animate({
+                    left: positionX02 - $slideWidth02 + 'px'
+                }, 800, 'swing', function () {
+                    $slideWrap02.css({
+                        'left': 0
+                    });
+                });
+            } else {
+                $slideWrap02.stop().animate({
+                    left: positionX02 + $slideWidth02 * ($currentIdx02 - $targetIdx02) + 'px'
+                }, 800, 'swing');
+            }
+        };
+
+        var autoSlideFn02 = function () {
+            setAutoSlide02 = setInterval(function () {
+                $targetIdx02++;
+                if ($currentIdx02 >= $slideLength02 - 1) $targetIdx02 = 0;
+                shiftSlideFn02();
+                $currentIdx02 = $targetIdx02;
+            }, 2000);
+        }
+
+        $(window).resize(function (e) {
+            e.preventDefault();
+            $slideWidth02 = $slide02.innerWidth();
+        })
+
+        autoSlideFn02();
+
+    };
+    var policyFn = function () {
+
+        var $policyImg = $('#main #section02 .wrap .container .area03 .img-wrap .list01'),
+            $policyCover = $policyImg.find('.img-cover'),
+            $policyLink = $('#main #section02 .wrap .container .area03 .img-wrap .list a'),
+            $policyTitle = $policyLink.find('.title'),
+            $policyText = $policyLink.find('.text'),
+            $policyBtn = $('#section02 .area03 .menu-list a');
+        
+        var imgList = [
+            {
+                imgUrl : '../img/policy_bg01.jpg',
+                title: '국토도시',
+                text: '대한민국 모두를 생각하는 국토 및 도시 <br> 정책을 확인하실 수 있습니다.',
+                linkUrl:'#none'
+            },
+            {
+                imgUrl : '../img/policy_bg02.jpg',
+                title: '주택토지',
+                text: '주택시장 안정 및 합리적인 토지이용을 <br> 위한 정책 자료를 확인하실 수 있습니다.',
+                linkUrl:'#none'
+            },
+            {
+                imgUrl : '../img/policy_bg03.jpg',
+                title: '건설',
+                text: '건설 기술력 증대를 위한 다양한 건설경제, <br> 기술안전, 해외건설 등의 정책 자료를 제공합니다.',
+                linkUrl:'#none'
+            },
+            {
+                imgUrl : '../img/policy_bg04.jpg',
+                title: '교통물류',
+                text: '기술안전, 해외건설 등의 정책 자료를 제공합니다. <br> 있습니다.',
+                linkUrl:'new link'
+            },
+            {
+                imgUrl : '../img/policy_bg05.jpg',
+                title: '항공',
+                text: '편리하고 안전한 항공교통 관련 정책을 <br> 제공합니다.',
+                linkUrl:'new link'
+            },
+            {
+                imgUrl : '../img/policy_bg06.jpg',
+                title: '도로철도',
+                text: '국민을 위한 안전한 도로 및 철도환경을 <br> 위한 정책을 확인하실 수 있습니다.',
+                linkUrl:'new link'
+            },
+        ];
+
+        var data = null;
+
+        $policyBtn.each(function(idx){
+            $(this).on({
+                mouseenter: function(e){
+                    e.preventDefault();
+                    data = imgList[idx];
+                    //btn css
+                    $policyBtn.removeClass('active');
+                    $(this).addClass('active');
+                    //img css
+                    $policyImg.css({background:'url('+data.imgUrl+') no-repeat'});
+                    $policyTitle.text(data.title);
+                    $policyText.html(data.text);
+                    $policyLink.attr('href',data.linkUrl);
+                    $policyCover.addClass('active');
+                    setTimeout(function(){
+                        $policyCover.removeClass('active');
+                    },600);
+                }
+            })
+        })
+
+    }
 
     var bannerFn = function () {
 
