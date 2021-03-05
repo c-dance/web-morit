@@ -386,6 +386,7 @@ $(document).ready(function () {
         autoSlideFn02();
 
     };
+
     var policyFn = function () {
 
         var $policyImg = $('#main #section02 .wrap .container .area03 .img-wrap .list01'),
