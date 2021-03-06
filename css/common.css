@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
+@font-face {
+    src: url("../fonts/NotoSansKR-Regular.otf");
+    font-family: "Noto Sans KR";
+}
+
+@font-face {
+    src: url("../fonts/NanumGothic-Regular.ttf");
+    font-family: "Nanum Gothic";
+}
+
 * {margin:0;padding:0;border:0;vertical-align:middle;box-sizing: border-box;}/*추가:box-sizing*/
 html, body {width:100%;height:100%;}/*추가:background*/
 html {overflow-y:scroll;}/*기본폰트16px*/
 html.addScroll {overflow:hidden;}
-body {font:normal 20px/1 'Roboto','Nanum Gothic','Noto Sans KR';text-rendering:optimizeLegibility;color:#222;background:#fff;}/*수정:background:url->#fff, font:14px->20px, 추가:text-rendering*/
+body {font:normal 20px/1 'Noto Sans KR', 'Nanum Gothic';text-rendering:optimizeLegibility;color:#222;background:#fff;}/*수정:background:url->#fff, font:14px->20px, 추가:text-rendering*/
 header,main,footer,nav,section,aside {display:block;}
 h1,h2,h3,h4,h5,h6 {font-weight:100;font-size:16px;}/*수정:font-size:14px->16px*/
 ul, li {list-style:none;}
