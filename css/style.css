@@ -1,13 +1,19 @@
-@charset "UTF-8";
+* {
+    box-sizing: border-box;
+}
 
-/* ===============================wrapper==================================*/
+/* ===========================================================
+    #wrapper
+============================================================*/
 #wrapper {
     z-index: 1;
     width: 100%;
     min-height: 100%;
 }
 
-/* ===============================header 공통영역==================================*/
+/* ===========================================================
+    #header 공통영역
+============================================================*/
 #header {
     z-index: 3;
     position: relative;
@@ -31,7 +37,9 @@
     margin: 0 auto;
 }
 
-/* ===============================container==================================*/
+/* ===========================================================
+    #header > logo
+============================================================*/
 #header .wrap .container .logo {
     position: relative;
     top: 0;
@@ -45,43 +53,52 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: url(../img/logo_season04.png) -50% 50% no-repeat;
+    background: url(../img/logo_season01.png) -50% 50% no-repeat;
 }
 
-/* ===============================search==================================*/
-.search-wrap {
+/* ===========================================================
+    #header > search-wrap 
+============================================================*/
+#header .wrap .container .search-wrap {
+    display: inline-block;
     position: absolute;
     top: 0;
     left: calc(50% - 340px);
-    display: inline-block;
     width: auto;
     height: 100%;
     padding: 33px 0;
 }
 
-.search-wrap .gov_logo {
+/* ===========================================================
+    #header >search-wrap > gov_logo
+============================================================*/
+#header .wrap .container .search-wrap .gov_logo {
     float: left;
     margin-right: 20px;
     width: 90px;
     height: 40px
 }
 
-.search-wrap .gov_logo a {
+#header .wrap .container .search-wrap .gov_logo a {
     display: block;
     width: 100%;
     height: 100%;
-    background: url(../img/bg_iconlogo.png) 0 -100px no-repeat;
     text-indent: -9999px;
+    background: url(../img/bg_iconlogo.png) 0 -100px no-repeat;
 }
 
-.search-wrap .search {
+/* ===========================================================
+    #header > search-wrap > search-text
+============================================================*/
+#header .wrap .container .search-wrap .search-text {
     position: relative;
     float: left;
     width: 370px;
     height: 45px;
 }
 
-.search-wrap .search form {
+#header .wrap .container .search-wrap .search-text form {
+    overflow: hidden;
     position: relative;
     display: inline-block;
     padding: 3px 5px 0;
@@ -89,22 +106,19 @@
     /*314*/
     height: 45px;
     border-radius: 25px;
-    background-color: #fff;
     border: 2px solid #006bb7;
-    overflow: hidden;
+    background-color: #fff;
 }
 
-select {
+#header .wrap .container .search-wrap .search-text form select {
     display: inline-block;
+    outline: none;
     width: 70px;
     height: 35px;
     background-color: #fff;
-    outline: none;
 }
 
-select option {}
-
-input[type='text'] {
+#header .wrap .container .search-wrap .search-text form input[type='text'] {
     display: inline-block;
     /* width: 37.5796%; */
     width: 160px;
@@ -112,14 +126,14 @@ input[type='text'] {
     padding: 5px;
 }
 
-.search-btn {
+#header .wrap .container .search-wrap .search-text form .search-btn {
     position: relative;
     display: inline-block;
     width: 30px;
     height: 25px;
 }
 
-.search-btn::after {
+#header .wrap .container .search-wrap .search-text form .search-btn::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -127,23 +141,24 @@ input[type='text'] {
     height: 100%;
     content: '';
     background: url(../img/bg_iconset02.png) -250px -100px no-repeat;
-
 }
 
-/* ===============================search >hidden-menu==================================*/
-.search-wrap .search .hidden-menu {
+/* ===========================================================
+    #header > search-wrap > search-text > hidden-menu
+============================================================*/
+#header .wrap .container .search-wrap .search-text .hidden-menu {
     position: absolute;
     display: inline-block;
     top: 0;
     right: 0;
     width: 45px;
     height: 45px;
+    font-size: 0;
     border-radius: 50%;
     background: #006bb7;
-    font-size: 0;
 }
 
-.search-wrap .search .hidden-menu::after {
+#header .wrap .container .search-wrap .search-text .hidden-menu::after {
     content: '';
     position: absolute;
     top: 14px;
@@ -153,15 +168,17 @@ input[type='text'] {
     background: url(../img/bg_iconset02.png) -75px -50px no-repeat;
 }
 
-/* ===============================search==================================*/
-.search-wrap .search_box {
+/* ===========================================================
+    #header > search-wrap > search-list
+============================================================*/
+#header .wrap .container .search-wrap .search-list {
     float: left;
     margin-left: 20px;
     height: 45px;
     width: auto;
 }
 
-.search-wrap .search_box .box {
+#header .wrap .container .search-wrap .search-list .list {
     display: inline-block;
     width: 71px;
     height: 100%;
@@ -172,7 +189,7 @@ input[type='text'] {
     border: 1px solid #006bb7;
 }
 
-.search-wrap .search_box .box a {
+#header .wrap .container .search-wrap .search-list .list a {
     display: block;
     text-align: center;
     font-size: 14px;
@@ -180,7 +197,9 @@ input[type='text'] {
     color: #006bb7;
 }
 
-/* ===============================siteBox==================================*/
+/* ===========================================================
+    #header > siteBox
+============================================================*/
 #header .wrap .site-box {
     z-index: 3;
     position: absolute;
@@ -221,13 +240,19 @@ input[type='text'] {
     background: url(../img/bg_iconset02.png) -100px -50px no-repeat;
 }
 
-/* ===============================siteBox : mobile==================================*/
+/* ===========================================================
+    #header > siteBox (mobile)
+============================================================*/
 #header .wrap .site-box.mobile {
     position: absolute;
     top: 6px;
     left: 0;
-    background: transparent;
+    background: #fff;
     transition: none;
+}
+
+#header .wrap .site-box.mobile:hover {
+    background: #fff;
 }
 
 #header .wrap .site-box.mobile a::before {
@@ -250,7 +275,9 @@ input[type='text'] {
     background: url(../img/bg_iconset02.png) -250px -100px no-repeat;
 }
 
-/* ===============================nav==================================*/
+/* ===========================================================
+    #header > nav
+============================================================*/
 
 #header .wrap nav {
     z-index: 2;
@@ -286,7 +313,9 @@ input[type='text'] {
     background: #00428c;
 }
 
-/* ===============================nav==================================*/
+/* ===========================================================
+    #header > util-menu
+============================================================*/
 #header .wrap nav .util-menu {
     position: absolute;
     top: -100px;
@@ -331,7 +360,9 @@ input[type='text'] {
     background: #999;
 }
 
-/* ===============================util-menu > sns==================================*/
+/* ===========================================================
+    #header > util-menu > sns-wrap
+============================================================*/
 
 #header .wrap nav .util-menu .sns-wrap {
     height: 18px;
@@ -357,9 +388,9 @@ input[type='text'] {
     content: '';
     display: block;
     width: 100%;
-    /*16px*/
+    /*width: 16px*/
     height: 100%;
-    /*18px*/
+    /*height: 18px*/
     background: url(../img/bg_iconsns.png) 0 0 no-repeat;
 }
 
@@ -399,15 +430,20 @@ input[type='text'] {
     background: url(../img/bg_iconsns.png) -122px -24px no-repeat;
 }
 
-/* ===============================nav-depth1==================================*/
+/* ===========================================================
+   #header > nav-depth1
+============================================================*/
 #header .wrap nav .nav-depth1 {
     position: relative;
+    margin: 0 auto;
     width: 100%;
     max-width: 1400px;
     height: 64px;
-    margin: 0 auto;
 }
 
+/* ===========================================================
+   #header > nav-depth1 > cont1
+============================================================*/
 #header .wrap nav .nav-depth1 .cont1 {
     float: left;
     width: 213px;
@@ -416,16 +452,16 @@ input[type='text'] {
 }
 
 #header .wrap nav .nav-depth1 .cont1::after {
+    content: '';
     position: relative;
+    display: inline-block;
     bottom: 40px;
     left: 50%;
-    display: inline-block;
     width: 24px;
     height: 1px;
-    content: '';
-    background-color: #fff;
     transform-origin: 50%;
     transform: rotate(-55deg);
+    background-color: #fff;
 }
 
 #header .wrap nav .nav-depth1 .cont1:last-child:after {
@@ -473,7 +509,9 @@ input[type='text'] {
     border-top: 13px solid #d90000;
 }
 
-/* ===============================nav-depth2==================================*/
+/* ===========================================================
+   #header > nav-depth2
+============================================================*/
 #header .wrap nav .nav-depth1 .cont1 .nav-depth2 {
     z-index: 1;
     display: none;
@@ -523,7 +561,9 @@ input[type='text'] {
     display: none;
 }
 
-/* ===============================nav-depth3==================================*/
+/* ===========================================================
+   #header > nav-depth3
+============================================================*/
 #header .wrap nav .nav-depth3 {
     padding: 16px 0;
 }
@@ -548,8 +588,9 @@ input[type='text'] {
     text-decoration: underline;
 }
 
-
-/* ===============================nav : mobile==================================*/
+/* ===========================================================
+    #header nav (mobile)
+============================================================*/
 #header .wrap nav.mobile {
     z-index: 100;
     display: none;
@@ -576,6 +617,9 @@ input[type='text'] {
     background: url(../img/bg_iconlogo.png) 0 -50px no-repeat;
 }
 
+/* ===========================================================
+    #header > util-menu (mobile)
+============================================================*/
 #header .wrap nav.mobile .util-menu {
     position: relative;
     top: 0;
@@ -602,7 +646,6 @@ input[type='text'] {
     height: 40px;
     font-size: 13px;
     border: 1px solid #fff;
-    font-size: 0;
 }
 
 #header .wrap nav.mobile .util-menu .menu-wrap .text:first-child {
@@ -617,7 +660,9 @@ input[type='text'] {
     display: none;
 }
 
-/* ===============================util-menu > sns==================================*/
+/* ===========================================================
+    #header > util-menu > sns-wrap (mobile)
+============================================================*/
 
 #header .wrap nav.mobile .util-menu .sns-wrap {
     width: 100%;
@@ -635,11 +680,11 @@ input[type='text'] {
 }
 
 #header .wrap nav.mobile .util-menu .sns-wrap .sns a:hover::before {
+    content: '';
+    display: block;
     position: relative;
     top: -8px;
     left: -5px;
-    content: '';
-    display: block;
     width: 32px;
     height: 32px;
     background: url(../img/bg_iconsns.png) 0 -50px no-repeat;
@@ -661,7 +706,9 @@ input[type='text'] {
     background: url(../img/bg_iconsns.png) -250px -50px no-repeat;
 }
 
-/* ======nav-depth1======*/
+/* ===========================================================
+    #header > nav-depth1 (mobile)
+============================================================*/
 #header .wrap nav.mobile .nav-depth1 {
     display: inline-block;
     margin-left: 0;
@@ -683,9 +730,9 @@ input[type='text'] {
 
 #header .wrap nav.mobile .nav-depth1 .cont1>a {
     position: relative;
-    background-color: #2b2f32;
     color: #fff;
     border-bottom: 1px solid #000;
+    background-color: #2b2f32;
 }
 
 #header .wrap nav.mobile .nav-depth1 .cont1>a::after {
@@ -699,7 +746,9 @@ input[type='text'] {
     background: url(../img/bg_iconselect.png) 50% 50% no-repeat;
 }
 
-/* ======nav-depth2======*/
+/* ===========================================================
+    #header > nav-depth2 (mobile)
+============================================================*/
 #header .wrap nav.mobile .nav-depth1 .cont1 .nav-depth2 {
     z-index: 1;
     display: none;
@@ -754,7 +803,9 @@ input[type='text'] {
     background: url(../img/bg_iconset02.png) -224px -125px no-repeat;
 }
 
-/* ======nav-depth3======*/
+/* ===========================================================
+    #header > nav-depth3 (mobile)
+============================================================*/
 #header .wrap nav.mobile .nav-depth3 {
     display: none;
     padding: 4px 8px;
@@ -766,39 +817,36 @@ input[type='text'] {
 }
 
 #header .wrap nav.mobile .nav-depth3 .cont3 {
-    padding: 0 8px;
     list-style-type: square;
     display: list-item;
     margin-left: 1rem;
+    padding: 0 8px;
 }
 
 #header .wrap nav.mobile .nav-depth3 .cont3 a {
     display: block;
+    border: 0;
     width: 100%;
     height: 22px;
     color: #555555;
     background-color: #fff;
-    border: 0;
 }
 
-/* ===============================main==================================*/
+/* ===========================================================
+    #main
+============================================================*/
 #main {
     z-index: 2;
     position: relative;
     width: 100%;
 }
 
-/* ===============================section01==================================*/
+/* ===========================================================
+    #section01, section02 공통요소
+============================================================*/
 #main #section01,
 #main #section02 {
     width: 100%;
-}
-
-#main #section01 .wrap {
-    margin: 0 auto;
-    padding: 40px 0;
-    width: 100%;
-    max-width: 1400px;
 }
 
 #main #section01 .wrap .container,
@@ -808,15 +856,23 @@ input[type='text'] {
     height: 100%;
 }
 
-/*-----common round box-----*/
 #main #section01 .wrap .container .round-box,
-#section02 .wrap .container .round-box {
+#main #section02 .wrap .container .round-box {
     border: 1px solid #dfdfdf;
     border-radius: 10px;
     overflow: hidden;
 }
 
-/*-----slider section-----*/
+/* ===========================================================
+    #section01 > slider-wrap
+============================================================*/
+#main #section01 .wrap {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 100%;
+    max-width: 1400px;
+}
+
 #main #section01 .wrap .container .slider-wrap {
     width: 1044px;
     height: 368px;
@@ -841,13 +897,13 @@ input[type='text'] {
 }
 
 #main #section01 .wrap .container .slider-wrap .slider-box .slide-view .slide-wrap .slide {
+    opacity: 0;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
 }
 
 #main #section01 .wrap .container .slider-wrap .slider-box .slide-view .slide-wrap .slide:nth-child(1) {
@@ -868,21 +924,21 @@ input[type='text'] {
 #main #section01 .wrap .container .slider-wrap .slider-box .slide-btns button {
     position: relative;
     display: inline-block;
+    outline: none;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     border: 1px solid #fff;
-    outline: none;
     background-color: rgba(0, 0, 0, .8);
 }
 
 #main #section01 .wrap .container .slider-wrap .slider-box .slide-btns button::after {
+    content: '';
     position: absolute;
     top: 9px;
     left: 10px;
     width: 12px;
     height: 12px;
-    content: '';
     background: url(../img/bg_iconset.png) 0 0 no-repeat;
 }
 
@@ -916,12 +972,12 @@ input[type='text'] {
 }
 
 #main #section01 .wrap .container .slider-wrap .slider-box .slide-btns span::after {
+    content: '';
     position: absolute;
     top: calc(50% - 1px);
     left: calc(50% - 20px);
     width: 40px;
     height: 2px;
-    content: '';
     background-color: #888;
     transform-origin: 50%;
     transform: rotate(-45deg);
@@ -946,8 +1002,9 @@ input[type='text'] {
     color: #888;
 }
 
-/*-----tab section-----*/
-/* ========972================ */
+/* ===========================================================
+    #section01 > tab-wrap
+============================================================*/
 #main #section01 .wrap .container .tab-wrap {
     position: absolute;
     top: 0;
@@ -979,8 +1036,8 @@ input[type='text'] {
     position: relative;
     width: auto;
     height: 100%;
-    padding: 15px 0;
     line-height: 1.7rem;
+    padding: 15px 0;
     font-size: 1rem;
     color: #8f8f8f;
 }
@@ -1120,29 +1177,31 @@ input[type='text'] {
     display: inline-block;
     width: 100%;
     height: 100%;
+    line-height: 120%;
     overflow: hidden;
     font-size: 16px;
-    line-height: 120%;
     white-space: normal;
     text-overflow: ellipsis;
     color: #454545;
 }
 
 #main #section01 .wrap .container .tab-wrap .tab-box .tab-item .tab-latest>span {
+    overflow: hidden;
     display: block;
     width: 100%;
     height: auto;
     max-height: 38px;
+    line-height: 130%;
     margin-top: 10px;
     padding-right: 0;
     font-size: 14px;
-    line-height: 130%;
-    color: #767676;
     white-space: normal;
-    overflow: hidden;
+    color: #767676;
 }
 
-/*-----news section-----*/
+/* ===========================================================
+    #section01 > news-wrap
+============================================================*/
 #main #section01 .wrap .container .news-wrap {
     margin-top: 20px;
     width: 100%;
@@ -1153,9 +1212,9 @@ input[type='text'] {
     position: relative;
     float: left;
     margin-right: 20px;
+    border: 0;
     width: 335px;
     height: auto;
-    border: 0;
 }
 
 #main #section01 .wrap .container .news-wrap .news:last-child {
@@ -1205,8 +1264,8 @@ input[type='text'] {
     line-height: 1.4rem;
     color: #fff;
     text-align: center;
-    background-color: rgba(10, 112, 170, 0.9);
     transition: all .3s ease-in-out;
+    background-color: rgba(10, 112, 170, 0.9);
 }
 
 #main #section01 .wrap .container .news-wrap .news:nth-child(2) a .cover {
@@ -1264,8 +1323,8 @@ input[type='text'] {
     height: 38px;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, .7);
-    background-color: #fff;
     transition: color .4s .8s ease-in-out;
+    background-color: #fff;
 }
 
 #main #section01 .wrap .container .news-wrap .news .video-news-btn:hover {
@@ -1273,10 +1332,10 @@ input[type='text'] {
 }
 
 #main #section01 .wrap .container .news-wrap .news .video-news-btn i {
+    position: relative;
     display: block;
     width: 16px;
     height: 2px;
-    position: relative;
     top: calc(50% - 1px);
     left: 11px;
     content: '';
@@ -1321,7 +1380,6 @@ input[type='text'] {
     position: relative;
     top: 0;
     left: 0;
-    /* margin-left: 0; */
     width: 500%;
     font-size: 0;
 }
@@ -1355,8 +1413,8 @@ input[type='text'] {
 }
 
 #main #section01 .wrap .container .news-wrap .news .top-cover span i {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     margin: 0 4px;
     width: 12px;
     height: 12px;
@@ -1385,9 +1443,9 @@ input[type='text'] {
     background-color: #ff6600;
 }
 
-
-/* ===============================#main #section02==================================*/
-
+/* ===========================================================
+    #section02 공통
+============================================================*/
 #main #section02 {
     position: relative;
     content: '';
@@ -1401,39 +1459,39 @@ input[type='text'] {
     padding: 35px 0;
     width: 100%;
     max-width: 1400px;
-    background: blue;
 }
 
 #main #section02 .wrap .container .area01,
 #main #section02 .wrap .container .area02,
 #main #section02 .wrap .container .area03,
 #main #section02 .wrap .container .area04 {
-    float: left;
     position: relative;
+    float: left;
 }
 
 #main #section02 .wrap .container .area01,
 #main #section02 .wrap .container .area02 {
-    /* margin-bottom: 20px; */
     margin-bottom: 1.4285%;
+    /* margin-bottom: 20px; */
 }
 
 #main #section02 .wrap .container .area01,
 #main #section02 .wrap .container .area03 {
-    /* width: 675px; */
     width: 48.2142%;
-    /* margin-right: 18px; */
     margin-right: 1.2857%;
+    /* width: 675px; */
+    /* margin-right: 18px; */
 }
 
 #main #section02 .wrap .container .area02,
 #main #section02 .wrap .container .area04 {
-    /* width: 707px; */
     width: 50.5%;
+    /* width: 707px; */
 }
 
-
-/* ===============================area01온통==============================*/
+/* ===========================================================
+    area01 > img-wrap
+============================================================*/
 #main #section02 .wrap .container .area01 {
     height: 386px;
 }
@@ -1457,7 +1515,9 @@ input[type='text'] {
     height: 100%;
 }
 
-/* ===============================area01 열린장관실==============================*/
+/* ===========================================================
+    area01 > minister-wrap > img-wrap
+============================================================*/
 #main #section02 .wrap .container .area01 .col-content {
     float: left;
     /* width: 317px; */
@@ -1470,10 +1530,9 @@ input[type='text'] {
     z-index: 1;
     position: relative;
     overflow: hidden;
-    position: relative;
     display: block;
-    /* height: 138px; */
     height: 35.7512%;
+    /* height: 138px; */
     background: url(../img/bg_minister_pattern.png) 0 0 no-repeat;
     background-size: cover;
 }
@@ -1486,7 +1545,6 @@ input[type='text'] {
     filter: hue-rotate(15deg);
 }
 
-/* 태극기 이미지 */
 #main #section02 .wrap .container .area01 .col-content .minister::before {
     position: relative;
     content: '';
@@ -1500,16 +1558,15 @@ input[type='text'] {
 
 #main #section02 .wrap .container .area01 .col-content .minister::after {
     z-index: 2;
+    display: block;
     content: '';
     position: absolute;
     right: 0;
     bottom: 0;
-    display: block;
     width: 132px;
-    height: 94%;
+    height: 91%;
     background-size: cover;
     background: url(../img/bg_minister_item02.png) no-repeat;
-
 }
 
 #main #section02 .wrap .container .area01 .col-content .minister .text-wrap {
@@ -1528,10 +1585,10 @@ input[type='text'] {
 }
 
 #main #section02 .wrap .container .area01 .col-content .minister .text-wrap .text {
-    margin-bottom: 5px;
-    font-size: 14px;
-    letter-spacing: -1px;
     line-height: 160%;
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+    font-size: 14px;
 }
 
 #main #section02 .wrap .container .area01 .col-content .minister .text-wrap .arrow {
@@ -1552,20 +1609,20 @@ input[type='text'] {
     right: 9px;
     width: 35px;
     height: 9px;
-    background: url(../img/bg_iconset02.png) -150px 0 no-repeat;
     transition: all .4s ease-in-out;
+    background: url(../img/bg_iconset02.png) -150px 0 no-repeat;
 }
 
 #main #section02 .wrap .container .area01 .col-content .minister:hover .text-wrap .arrow::after {
     right: -9px;
 }
 
-/* ===============================area01 col-content==============================*/
-
+/* ===========================================================
+    area01 > minister-wrap > minister-list (공통요소)
+============================================================*/
 #main #section02 .wrap .container .area01 .col-content .list-wrap {
-    /* position: relative; */
-    background: #fff;
     height: 64.2487%;
+    background: #fff;
 }
 
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list {
@@ -1581,29 +1638,27 @@ input[type='text'] {
     background: #cee7f1;
 }
 
-
-#main #section02 .wrap .container .area01 .col-content .list-wrap .list03 {
-    border-bottom: none;
-}
-
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list a {
     display: block;
     width: 100%;
     height: 100%;
     line-height: 82.66px;
-    text-align: left;
     padding-left: 50%;
+    text-align: left;
     background: #fff;
 }
 
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list a::before {
     content: '';
     position: absolute;
-    /* left: 85px; */
     left: 26.8138%;
     top: 20px;
+    /* left: 85px; */
 }
 
+/* ===========================================================
+    area01 > minister-wrap > minister-list (개별요소)
+============================================================*/
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list01 a::before {
     width: 42px;
     height: 40px;
@@ -1616,33 +1671,42 @@ input[type='text'] {
     background: url(../img/bg_iconset.png) -50px -75px no-repeat;
 }
 
+#main #section02 .wrap .container .area01 .col-content .list-wrap .list03 {
+    border-bottom: none;
+}
+
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list03 a::before {
     width: 51px;
     height: 43px;
     background: url(../img/bg_iconset.png) -100px -75px no-repeat;
 }
 
-/* ===============================area02 공지사항==============================*/
+/* ===========================================================
+    #section02 > area02
+============================================================*/
 #main #section02 .wrap .container .area02 {
     height: 386px;
 }
 
+/* ===========================================================
+    area02 > tab-wrap
+============================================================*/
 #main #section02 .wrap .container .area02 .tab-wrap {
     position: relative;
     width: 100%;
-    /* height: 220px; */
     height: 56.9948%;
     padding: 5px 25px 20px 25px;
     background: #fff;
+    /* height: 220px; */
 }
 
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box {
-    /* width: 657px; */
-    /* height: 195px; */
     height: 100%;
-    /* background:#ccc; */
 }
 
+/* ===========================================================
+    area02 > tab-wrap > tab-btn(탭메뉴)
+============================================================*/
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-btn {
     z-index: 2;
     position: relative;
@@ -1659,8 +1723,8 @@ input[type='text'] {
     position: relative;
     width: auto;
     height: 100%;
-    padding: 15px 0;
     line-height: 1.7rem;
+    padding: 15px 0;
     font-size: 1rem;
     color: #8f8f8f;
 }
@@ -1671,21 +1735,21 @@ input[type='text'] {
 }
 
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-btn .btn.active:after {
+    content: '';
     position: absolute;
     bottom: -1px;
     display: block;
     width: 100%;
     height: 3px;
-    content: '';
     background-color: #4071b4;
 }
 
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-btn .dot {
+    content: '';
     display: inline-block;
     margin: 0 8px;
     width: 5px;
     height: 5px;
-    content: '';
     background-color: #8f8f8f;
 }
 
@@ -1720,7 +1784,9 @@ input[type='text'] {
     transform: rotate(90deg);
 }
 
-/* ===============================area02==============================*/
+/* ===========================================================
+    area02 > tab-wrap > tab-item (left)
+============================================================*/
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item {
     display: none;
     position: absolute;
@@ -1738,17 +1804,16 @@ input[type='text'] {
 }
 
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest {
-    /* display: none; */
     z-index: 1;
     overflow: hidden;
     position: relative;
     float: left;
-    /* width: 312.75px; */
     width: 47.4809%;
-    /* height: 114px; */
     height: 100%;
     border-right: 1px dotted #c4c4c4;
     transition: all .3s .3s ease-in-out;
+    /* width: 312.75px; */
+    /* height: 114px; */
 }
 
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest span {
@@ -1811,8 +1876,9 @@ input[type='text'] {
     color: #767676;
 }
 
-/* ===============================tab-right==============================*/
-
+/* ===========================================================
+    area02 > tab-wrap > tab-item (right)
+============================================================*/
 #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6) {
     overflow: hidden;
     float: right;
@@ -1838,7 +1904,9 @@ input[type='text'] {
     color: #767676;
 }
 
-/* ===============================area02 법령정보==============================*/
+/* ===========================================================
+    area02 > info-cont
+============================================================*/
 #main #section02 .wrap .container .area02 .info-cont {
     position: relative;
     width: 100%;
@@ -1864,12 +1932,12 @@ input[type='text'] {
     height: 100%;
 }
 
-#main #section02 .wrap .container .area02 .info-cont .box-wrap .box-01 {
+#main #section02 .wrap .container .area02 .info-cont .box-wrap .box01 {
     padding-top: 100px;
     background: #d0e3f1;
 }
 
-#main #section02 .wrap .container .area02 .info-cont .box-wrap .box-02 {
+#main #section02 .wrap .container .area02 .info-cont .box-wrap .box02 {
     padding-top: 90px;
     background: #b8d2e4;
 }
@@ -1881,7 +1949,7 @@ input[type='text'] {
     line-height: 24px;
 }
 
-#main #section02 .wrap .container .area02 .info-cont .box-wrap .box-01 a::before {
+#main #section02 .wrap .container .area02 .info-cont .box-wrap .box01 a::before {
     content: '';
     position: absolute;
     top: calc(50% - 52px);
@@ -1891,7 +1959,7 @@ input[type='text'] {
     background: url(../img/bg_iconset.png) 0px -125px no-repeat;
 }
 
-#main #section02 .wrap .container .area02 .info-cont .box-wrap .box-02 a::before {
+#main #section02 .wrap .container .area02 .info-cont .box-wrap .box02 a::before {
     content: '';
     position: absolute;
     top: calc(50% - 44px);
@@ -1901,7 +1969,9 @@ input[type='text'] {
     background: url(../img/bg_iconset.png) -75px -125px no-repeat;
 }
 
-/* ===============================area02 뉴스 슬라이드==============================*/
+/* ===========================================================
+    area02 > info-cont > news 슬라이드
+============================================================*/
 
 #main #section02 .wrap .container .area02 .info-cont .news {
     position: relative;
@@ -1986,7 +2056,9 @@ input[type='text'] {
     background-color: #ff6600;
 }
 
-/* ===============================area03 말풍선==============================*/
+/* ===========================================================
+    #section02 > area03
+============================================================*/
 #main #section02 .wrap .container .area03 {
     height: 230px;
 }
@@ -2015,30 +2087,34 @@ input[type='text'] {
     color: #fff;
 }
 
-/* ===============================area03 이미지섹션 - 이미지==============================*/
-
+/* ===========================================================
+    area03 > img-wrap
+============================================================*/
 #main #section02 .wrap .container .area03 .img-wrap {
     position: relative;
     float: left;
-    /* width: 512px; */
     width: 75.8518%;
+    /* width: 512px; */
     margin-right: 0;
     height: 230px;
-    background: pink;
 }
 
+/* ===========================================================
+    area03 > img-wrap > list
+============================================================*/
 #main #section02 .wrap .container .area03 .img-wrap .list {
     z-index: 1;
     position: relative;
     float: left;
-    /* width: 374px; */
     width: 76.171%;
+    /* width: 374px; */
     height: 100%;
-    background: url(../img/policy_bg01.jpg) no-repeat;
     background-size: cover;
+    background: url(../img/policy_bg01.jpg) no-repeat;
 }
 
 #main #section02 .wrap .container .area03 .img-wrap .list .img-cover {
+    opacity: .2;
     position: absolute;
     top: 0;
     left: 0;
@@ -2046,7 +2122,6 @@ input[type='text'] {
     height: 100%;
     content: '';
     background-color: #000;
-    opacity: .2;
 }
 
 #main #section02 .wrap .container .area03 .img-wrap .list .img-cover.active {
@@ -2067,7 +2142,7 @@ input[type='text'] {
     font-size: 18px;
 }
 
-#main #section02 .wrap .container .area03 .img-wrap .list a .text {
+#main #section02 .wrap .container .area03 .img-wrap .list a .title-desc {
     line-height: 0.5rem;
     font-size: 8px;
 }
@@ -2084,15 +2159,15 @@ input[type='text'] {
 }
 
 #main #section02 .wrap .container .area03 .img-wrap .list a .arrow::after {
+    content: '';
     position: absolute;
-    display: block;
     top: 15px;
     left: 0px;
+    display: block;
     width: 35px;
     height: 9px;
-    content: '';
-    background: url(../img/bg_iconset02.png) -150px 0 no-repeat;
     transition: left .3s ease-in-out;
+    background: url(../img/bg_iconset02.png) -150px 0 no-repeat;
 }
 
 #main #section02 .wrap .container .area03 .img-wrap .list a .arrow:hover {
@@ -2103,35 +2178,35 @@ input[type='text'] {
     left: 12px;
 }
 
-/* ===============================area03 이미지섹션 - 메뉴==============================*/
-
-#main #section02 .wrap .container .area03 .img-wrap .menu-list {
+/* ===========================================================
+    area03 > img-wrap > policy-list
+============================================================*/
+#main #section02 .wrap .container .area03 .img-wrap .policy-list {
     position: relative;
     top: -100%;
     right: 0;
     float: right;
-    /* width: 162px; */
     width: 32.9938%;
+    /* width: 162px; */
     height: 100%;
-    background: gold;
 }
 
-#main #section02 .wrap .container .area03 .img-wrap .menu-list li {
+#main #section02 .wrap .container .area03 .img-wrap .policy-list li {
     z-index: 3;
     position: relative;
     width: 100%;
-    /* height: calc(230px / 6); */
     height: 16.6666%;
+    /* height: calc(230px / 6); */
     box-sizing: border-box;
-    background: #3175c2;
     border-top: 1px solid #5785b8;
+    background: #3175c2;
 }
 
-#main #section02 .wrap .container .area03 .img-wrap .menu-list li:last-child {
+#main #section02 .wrap .container .area03 .img-wrap .policy-list li:last-child {
     border-bottom: none;
 }
 
-#main #section02 .wrap .container .area03 .img-wrap .menu-list .active::before {
+#main #section02 .wrap .container .area03 .img-wrap .policy-list .active::before {
     content: '';
     display: block;
     position: absolute;
@@ -2144,8 +2219,9 @@ input[type='text'] {
     border-bottom: 19px solid transparent;
 }
 
-#main #section02 .wrap .container .area03 .img-wrap .menu-list li a {
+#main #section02 .wrap .container .area03 .img-wrap .policy-list li a {
     display: block;
+    height: 100%;
     text-align: center;
     font-size: 14px;
     color: #fff;
@@ -2153,55 +2229,59 @@ input[type='text'] {
     box-sizing: border-box;
 }
 
-#main #section02 .wrap .container .area03 .img-wrap .menu-list li .active {
+#main #section02 .wrap .container .area03 .img-wrap .policy-list li .active {
     background: #0f509a;
 }
 
-/* ==============================area03 직원안내/조직안내==============================*/
-#main #section02 .wrap .container .area03 .guide-wrap {
+/* ===========================================================
+    area03 > guide-list
+============================================================*/
+#main #section02 .wrap .container .area03 .guide-list {
     position: relative;
     float: right;
-    /* width: 149px; */
     width: 22.074%;
-    height: 230px;
-    background: coral;
+    height: auto;
 }
 
-#main #section02 .wrap .container .area03 .guide-wrap .list {
+#main #section02 .wrap .container .area03 .guide-list .list {
     position: relative;
-    width: 148.48px;
+    /* width: 148.48px; */
     height: 115px;
-    background: #cae0ef;
     border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+    background: #cae0ef;
 }
-
-#main #section02 .wrap .container .area03 .guide-wrap .list:hover {
-    background: #a7c5d8;
+#main #section02 .wrap .container .area03 .guide-list .list:last-child {border-bottom: 0; }
+#main #section02 .wrap .container .area03 .guide-list .list:hover {
     transition: all .3s;
+    background: #a7c5d8;
 }
 
-#main #section02 .wrap .container .area03 .guide-wrap .list a {
-    padding-top: 75px;
-    text-align: center;
+#main #section02 .wrap .container .area03 .guide-list .list a {
     display: block;
+    height: 100%;
+    line-height: 165px;
+    text-align: center;
     font-size: 15px;
     color: #555;
 }
 
-#main #section02 .wrap .container .area03 .guide-wrap .list01 a::after,
-#main #section02 .wrap .container .area03 .guide-wrap .list02 a::after {
+#main #section02 .wrap .container .area03 .guide-list .list01 a::after,
+#main #section02 .wrap .container .area03 .guide-list .list02 a::after {
     content: '';
-    position: absolute;
-    top: 11%;
-    left: 33%;
     display: block;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(60% - 50px);
+    /* top: 16%; */
+    /* left: 33%; */
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: #eaf1f6;
 }
 
-#main #section02 .wrap .container .area03 .guide-wrap .list a::before {
+#main #section02 .wrap .container .area03 .guide-list .list a::before {
     z-index: 5;
     content: '';
     display: block;
@@ -2209,29 +2289,36 @@ input[type='text'] {
     top: 20%;
 }
 
-#main #section02 .wrap .container .area03 .guide-wrap .list01 a::before {
-    left: 40%;
+#main #section02 .wrap .container .area03 .guide-list .list01 a::before {
     width: 30px;
     height: 29px;
+    left: calc(50% - 15px);
+    top: calc(50% - 29px);
     background: url(../img/bg_iconset.png) -175px -75px no-repeat;
 }
 
-#main #section02 .wrap .container .area03 .guide-wrap .list02 a::before {
-    left: 38%;
+#main #section02 .wrap .container .area03 .guide-list .list02 a::before {
     width: 37px;
     height: 28px;
+    top: calc(50% - 28px);
+    left: calc(50% - 18.5px);
     background: url(../img/bg_iconset.png) -175px -125px no-repeat;
 }
 
-/* ==============================area04 box-wrap==============================*/
+/* ===========================================================
+    #section02 > area04
+============================================================*/
 #main #section02 .wrap .container .area04 {
     height: 230px;
 }
 
+/* ===========================================================
+    #section02 > area04 > box-wrap
+============================================================*/
 #main #section02 .wrap .container .area04 .box-wrap {
     float: left;
-    /* width: 466.61px; */
     width: 65.9985%;
+    /* width: 466.61px; */
     height: 230px;
     background: #fff;
 }
@@ -2239,14 +2326,12 @@ input[type='text'] {
 #main #section02 .wrap .container .area04 .box-wrap .box {
     position: relative;
     float: left;
-    /* width: 154.375px; */
-    width: 33.0843%;
+    width: 33.3333%;
     height: 115px;
     /* padding-bottom: 16px; */
-    background: #fff;
     border-bottom: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
-    /* box-sizing: border-box; */
+    background: #fff;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box:hover {
@@ -2260,10 +2345,11 @@ input[type='text'] {
 
 #main #section02 .wrap .container .area04 .box-wrap .box a {
     display: block;
+    height: 100%;
+    line-height: 166px;
+    text-align: center;
     font-size: 15px;
     color: #555;
-    text-align: center;
-    padding-top: 75px;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box::before {
@@ -2277,51 +2363,60 @@ input[type='text'] {
 #main #section02 .wrap .container .area04 .box-wrap .box01::before {
     width: 44px;
     height: 46px;
+    left: calc(50% - 22px);
+    /* top: calc(50% - 46px); */
     background: url(../img/bg_iconset.png) 0 -200px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box02::before {
     width: 36px;
     height: 49px;
+    left: calc(50% - 18px);
     background: url(../img/bg_iconset.png) -50px -200px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box03::before {
     width: 36px;
-    height: 46px;
-    background: url(../img/bg_iconset.png) -101px -200px no-repeat;
+    height: 45px;
+    left: calc(50% - 18px);
+    background: url(../img/bg_iconset.png) -101px -202px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box04::before {
     width: 47px;
-    height: 41px;
+    height: 42px;
+    left: calc(50% - 23.5px);
     background: url(../img/bg_iconset.png) -150px -200px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box05::before {
     width: 46px;
-    height: 44px;
-    background: url(../img/bg_iconset.png) -200px -200px no-repeat;
+    height: 43px;
+    left: calc(50% - 23px);
+    background: url(../img/bg_iconset.png) -200px -201px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box06::before {
     width: 38px;
     height: 46px;
-    background: url(../img/bg_iconset.png) -254px -200px no-repeat;
+    left: calc(50% - 19px);
+    background: url(../img/bg_iconset.png) -254px -201px no-repeat;
 }
 
-/* ==============================area04 list==============================*/
+/* ===========================================================
+    #section02 > area04 > list-wrap
+============================================================*/
 #main #section02 .wrap .container .area04 .list-wrap {
     float: right;
     /* width: 227px; */
     width: 32.1074%;
     height: 230px;
-    background: green;
 }
 
 #main #section02 .wrap .container .area04 .list-wrap .list {
     position: relative;
-    height: 57.5px;
+    width: 100%;
+    height: 25%;
     background: #fff;
     border-bottom: 1px solid #d3d3d3;
 }
@@ -2334,7 +2429,7 @@ input[type='text'] {
 #main #section02 .wrap .container .area04 .list-wrap .list a {
     display: block;
     line-height: 57.5px;
-    padding-left: 30px;
+    margin-left: calc(50% - 56px);
     text-align: center;
     font-size: 13px;
 }
@@ -2342,46 +2437,43 @@ input[type='text'] {
 #main #section02 .wrap .container .area04 .list-wrap .list a::before {
     content: '';
     display: block;
+    position: absolute;
+    top: 15px;
 }
 
 #main #section02 .wrap .container .area04 .list-wrap .list01 a::before {
-    position: absolute;
-    top: 17px;
-    left: 55px;
     width: 34px;
     height: 26px;
     background: url(../img/bg_iconset.png) 0 -250px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .list-wrap .list02 a::before {
-    position: absolute;
-    top: 15px;
-    left: 55px;
     width: 25px;
     height: 26px;
     background: url(../img/bg_iconset.png) -50px -250px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .list-wrap .list03 a::before {
-    position: absolute;
-    top: 15px;
-    left: 80px;
-    width: 66px;
-    height: 31px;
+    left: calc(50% - 34px);
+    /* top: 17px; */
+    /* left: 80px; */
+    width: 68px;
+    height: 30px;
     background: url(../img/bg_iconset.png) -100px -250px no-repeat;
 }
 
 #main #section02 .wrap .container .area04 .list-wrap .list04 a::before {
-    position: absolute;
-    top: 15px;
-    left: 65px;
+    left: calc(50% - 44px);
+    /* top: 15px; */
+    /* left: 65px; */
     width: 88px;
-    height: 29px;
-    background: url(../img/bg_iconset.png) -172px -250px no-repeat;
+    height: 28px;
+    background: url(../img/bg_iconset.png) -175px -250px no-repeat;
 }
 
-
-/* ===============================section03==================================*/
+/* ===========================================================
+    section03
+============================================================*/
 #section03 {
     width: 100%;
 }
@@ -2399,7 +2491,9 @@ input[type='text'] {
     height: 40px;
 }
 
-/*-----btn-wrap-----*/
+/* ===========================================================
+    section03 > btn-wrap (공통요소)
+============================================================*/
 #main #section03 .wrap .container .btn-wrap {
     z-index: 2;
     position: relative;
@@ -2430,6 +2524,18 @@ input[type='text'] {
     background: url(../img/bg_iconset.png) -97px 0 no-repeat;
 }
 
+#main #section03 .wrap .container .btn-wrap a i {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    background: url(../img/bg_iconset.png) -175px 0 no-repeat;
+}
+
+/* ===========================================================
+    section03 > btn-wrap (개별요소)
+============================================================*/
 #main #section03 .wrap .container .btn-wrap button:nth-child(2) i {
     background: url(../img/bg_iconset.png) -123px 0 no-repeat;
 }
@@ -2447,16 +2553,9 @@ input[type='text'] {
     background: url(../img/bg_iconset.png) -144px 0 no-repeat;
 }
 
-#main #section03 .wrap .container .btn-wrap a i {
-    position: relative;
-    display: block;
-    margin: auto;
-    width: 16px;
-    height: 16px;
-    background: url(../img/bg_iconset.png) -175px 0 no-repeat;
-}
-
-/*-----banner-wrap-----*/
+/* ===========================================================
+    section03 > banner-view
+============================================================*/
 #main #section03 .wrap .container .banner-view {
     z-index: 1;
     position: absolute;
@@ -2495,8 +2594,9 @@ input[type='text'] {
     width: 100%;
 }
 
-
-/* ===============================footer==================================*/
+/* ===========================================================
+    #footer
+============================================================*/
 #footer {
     z-index: 2;
     position: relative;
@@ -2530,7 +2630,9 @@ input[type='text'] {
     height: 100%;
 }
 
-/*-----lihnk-wrap-----*/
+/* ===========================================================
+    #footer > lihnk-wrap
+============================================================*/
 #footer .wrap .container .link-wrap {
     margin-left: 0;
     padding: 24px 0;
@@ -2543,22 +2645,22 @@ input[type='text'] {
 }
 
 #footer .wrap .container .link-wrap a span::before {
+    content: '';
     position: relative;
+    display: inline-block;
     top: -2px;
     left: 0;
     margin-right: 5px;
-    display: inline-block;
     width: 5px;
     height: 5px;
-    content: '';
     background-color: #fff;
 }
 
 #footer .wrap .container .link-wrap a span {
     position: relative;
     margin: 0 10px;
-    font-size: 15px;
     line-height: 170%;
+    font-size: 15px;
     color: #fff;
 }
 
@@ -2566,22 +2668,27 @@ input[type='text'] {
     color: yellow;
 }
 
-/*-----go-wrap-----*/
+/* ===========================================================
+    #footer > go-wrap
+============================================================*/
 #footer .wrap .container .go-wrap {
     position: absolute;
     top: 0;
     right: 0;
 }
 
+/* ===========================================================
+    #footer > go-wrap > go-item
+============================================================*/
 #footer .wrap .container .go-wrap .go-item {
     position: relative;
     float: left;
     width: 194px;
     height: auto;
-    background-color: #42464d;
-    border: 1px solid #848890;
     border-top: 0;
     border-bottom: 0;
+    border: 1px solid #848890;
+    background-color: #42464d;
 }
 
 #footer .wrap .container .go-wrap .go-item:last-child {
@@ -2597,28 +2704,27 @@ input[type='text'] {
     line-height: 150%;
     font-size: 15px;
     color: #fff;
-    /* background: #42464d; */
 }
 
 #footer .wrap .container .go-wrap .go-item>a i {
-    display: inline-block;
+    content: '';
     position: absolute;
-    padding: 11px 9px;
     top: 21px;
     right: 18px;
+    display: inline-block;
+    padding: 11px 9px;
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    content: '';
     background-color: #2b2c2e;
 }
 
 #footer .wrap .container .go-wrap .go-item>a i::after {
+    content: '';
     position: relative;
     display: block;
     width: 10px;
     height: 6px;
-    content: '';
     background: url(../img/bg_iconset02.png) -225px -50px no-repeat;
 }
 
@@ -2642,8 +2748,8 @@ input[type='text'] {
 }
 
 #footer .wrap .container .go-wrap .go-item div ul {
-    padding: 10px 0;
     width: 100%;
+    padding: 10px 0;
     border-bottom: 1px dotted #fff;
 }
 
@@ -2662,15 +2768,17 @@ input[type='text'] {
 }
 
 #footer .wrap .container .go-wrap .go-item div ul li a::after {
+    content: '';
     display: inline-block;
     margin-left: 2px;
     width: 14px;
     height: 14px;
-    content: '';
     background: url(../img/bg_iconset02.png) -125px 0 no-repeat;
 }
 
-/*-----address-wrap-----*/
+/* ===========================================================
+    #footer > address-wrap
+============================================================*/
 #footer .wrap .container .address-wrap {
     position: relative;
     padding: 25px 0;
@@ -2703,25 +2811,25 @@ input[type='text'] {
 }
 
 #footer .wrap .container .address-wrap .logos a {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     color: transparent;
 }
 
 #footer .wrap .container .address-wrap .logos a::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     display: inline-block;
     width: 100%;
     height: 100%;
-    content: '';
 }
 
 #footer .wrap .container .address-wrap .logos a:first-child {
-    margin-right: 16px;
     width: 109px;
     height: 35px;
+    margin-right: 16px;
 }
 
 #footer .wrap .container .address-wrap .logos a:first-child::after {
@@ -2737,7 +2845,9 @@ input[type='text'] {
     background: url(../img/bg_iconlogo.png) -225px -100px no-repeat;
 }
 
-/* ===============================keyframe==================================*/
+/* ===========================================================
+    keyframe - #sectiiom01, 02 tab-menu
+============================================================*/
 @keyframes spin {
     from {
         transform: rotate(0);

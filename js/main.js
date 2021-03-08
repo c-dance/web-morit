@@ -394,7 +394,7 @@ $(document).ready(function () {
             $policyLink = $('#main #section02 .wrap .container .area03 .img-wrap .list a'),
             $policyTitle = $policyLink.find('.title'),
             $policyText = $policyLink.find('.text'),
-            $policyBtn = $('#section02 .area03 .menu-list a');
+            $policyBtn = $('#section02 .area03 .policy-list a');
         
         var imgList = [
             {
@@ -446,7 +446,7 @@ $(document).ready(function () {
                     $policyBtn.removeClass('active');
                     $(this).addClass('active');
                     //img css
-                    $policyImg.css({background:'url('+data.imgUrl+') no-repeat'});
+                    $policyImg.css({background:'url('+data.imgUrl+') no-repeat', backgroundSize: '100% 100%'});
                     $policyTitle.text(data.title);
                     $policyText.html(data.text);
                     $policyLink.attr('href',data.linkUrl);

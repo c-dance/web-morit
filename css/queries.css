@@ -1,19 +1,23 @@
 @charset "UTF-8";
 
 @media screen and (max-width: 1444px) {
-    #header .wrap  .container {
+    #header .wrap .container {
         width: calc(100% - 44px);
     }
+
     #header .wrap nav .nav-depth1 {
         width: calc(100% - 44px);
     }
-    .search-wrap {
+
+    #header .wrap .container .search-wrap {
         margin-left: 1.3888%;
     }
-    .search-wrap .search {
+
+    #header .wrap .container .search-wrap .search-text {
         width: 340px;
     }
-    .search-wrap .search_box {
+
+    #header .wrap .container .search-wrap .search-list {
         margin-left: 5px;
     }
 
@@ -56,7 +60,7 @@
 
     #main #section02 .wrap .container .area01,
     #main #section02 .wrap .container .area02 {
-        margin-bottom: 1.42857%
+        margin-bottom: 1.42857%;
     }
 
     #main #section02 .wrap .container .area02,
@@ -70,13 +74,15 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .search-wrap {
+    #header .wrap .container .search-wrap {
         left: 270px;
     }
+
     #header .wrap nav .cont1 .nav-depth2 .cont2:nth-child(5) {
         height: auto;
         min-height: auto;
     }
+
     #header .wrap nav .cont1:nth-child(5) .nav-depth2 .cont2:nth-child(5),
     #header .wrap nav .cont1:nth-child(1) .nav-depth2 .cont2:nth-child(5) {
         height: 270px;
@@ -117,25 +123,29 @@
 }
 
 @media screen and (max-width: 1200px) {
-
     #header .wrap {
         height: 135px;
     }
+
     #header .wrap .container .logo a {
         background: url(../img/mobile_logo.png) 50% 50% no-repeat;
     }
-    .search-wrap {
+
+    #header .wrap .container .search-wrap {
         padding: 33px 0 0;
         left: calc(50% - 205px);
         margin: 0;
     }
-    .search-wrap .search {
+
+    #header .wrap .container .search-wrap .search-text {
         margin-bottom: 5px;
     }
-    .search-wrap .search_box {
+
+    #header .wrap .container .search-wrap .search-list {
         float: none;
         margin-left: 150px;
     }
+
     #header .wrap nav .util-menu {
         position: absolute;
         top: -134px;
@@ -155,6 +165,7 @@
 }
 
 @media screen and (max-width: 1104px) {
+
     #header .wrap nav .cont1:nth-child(5) .nav-depth2 .cont2:nth-child(5),
     #header .wrap nav .cont1:nth-child(1) .nav-depth2 .cont2:nth-child(5) {
         height: auto;
@@ -175,15 +186,11 @@
         height: 290px;
     }
 
-    /*====================================================
-    #section02 - area01
-    ====================================================*/
     #main #section02 .wrap .container .area01 {
-        /* 1000-44 = 956기준 (1000일때) */
         width: 35.9832%;
         height: 772px;
-        background: coral;
         margin-right: 1.8828%;
+        /* 1000-44 = 956기준 */
     }
 
     #main #section02 .wrap .container .area01 .img-wrap {
@@ -197,19 +204,15 @@
         height: 50%;
     }
 
-
-
-    /*====================================================
-    #section02 - area02
-    ====================================================*/
     #main #section02 .wrap .container .area02 {
         width: 62.134%;
         height: 772px;
-        /* background: gold; */
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item {
         padding: 22px 0;
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest {
         float: none;
         display: block;
@@ -218,7 +221,8 @@
         border-right: 0;
         border-bottom: 1px dotted #c4c4c4;
     }
-    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6){
+
+    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6) {
         float: none;
         display: block;
         position: relative;
@@ -229,28 +233,25 @@
 
     #main #section02 .wrap .container .area02 .info-cont .box-wrap {
         width: 32.9391%;
-        /* margin-right: 1px; */
         margin-right: 2.027%;
+        /* margin-right: 1px; */
     }
-    
+
     #main #section02 .wrap .container .area02 .info-cont .box-wrap .box {
         width: 100%;
         height: 50%;
     }
+
     #main #section02 .wrap .container .area02 .info-cont .news {
         width: 65.0337%;
     }
 
-    /*====================================================
-    #section02 - area03
-    ====================================================*/
     #main #section02 .wrap .container .area03 {
-        /* 1000-44 = 956기준 (1000일때) */
-        /* 100%-1.8828 = 98.1172& */
+        float: left;
         width: 49.0586%;
         height: 360px;
         margin-right: 1.8828%;
-        float: left;
+        /* 100%-1.8828 = 98.1172% */
     }
 
     #main #section02 .wrap .container .area03 .img-wrap {
@@ -258,46 +259,48 @@
         margin-bottom: 2%;
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap {
+    #main #section02 .wrap .container .area03 .guide-list {
         width: 100%;
-        height: 115px;
+        /* height: 115px; */
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list {
+    #main #section02 .wrap .container .area03 .guide-list .list {
         width: 50%;
         float: left;
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list a {
+    #main #section02 .wrap .container .area03 .guide-list .list01 {
+        border-right: 1px solid #fff;
+        border-bottom: 0;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list a {
         line-height: 115px;
         padding-top: 0;
         padding-left: 50px;
-        /* display: inline-block; */
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list01 a::after,
-    #main #section02 .wrap .container .area03 .guide-wrap .list02 a::after {
+    #main #section02 .wrap .container .area03 .guide-list .list01 a::after,
+    #main #section02 .wrap .container .area03 .guide-list .list02 a::after {
         top: 28%;
         left: 24%;
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list01 a::before {
+    #main #section02 .wrap .container .area03 .guide-list .list01 a::before {
         top: 37%;
         left: 28%;
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list02 a::before {
+    #main #section02 .wrap .container .area03 .guide-list .list02 a::before {
         top: 35%;
         left: 27%;
     }
 
-    /*====================================================
-    #section02 - area04
-    ====================================================*/
+
     #main #section02 .wrap .container .area04 {
+        width: 49.0586%;
         /* 1000-44 = 956기준 (1000일때) */
         /* 100%-1.8828 = 98.1172& */
-        width: 49.0586%;
     }
 
     #main #section02 .wrap .container .area04 .box-wrap,
@@ -310,68 +313,85 @@
     }
 
     #main #section02 .wrap .container .area04 .list-wrap {
+        height: 100%;
         height: 115px;
     }
 
     #main #section02 .wrap .container .area04 .list-wrap .list {
-        width: 50%;
         float: left;
+        width: 50%;
+        height: 50%;
     }
 
-
-
-
+    #main #section02 .wrap .container .area04 .list-wrap .list01,
+    #main #section02 .wrap .container .area04 .list-wrap .list03 {
+        border-right: 1px dotted #9e9e9e;
+    }
 }
 
 @media screen and (max-width: 998px) {
+
     /*-----header : nav mobile 변형-----*/
     #header {
         height: 76px;
         border-bottom: 1px solid #999;
     }
+
     #header .wrap {
         height: 76px;
     }
+
     #header .wrap .container .logo {
         left: calc(50% - 138px);
         width: 276px;
         height: 75px;
     }
+
     #header .wrap .container .logo a {
         background: url(../img/mobile_logo_center.png) -50% 50% no-repeat;
     }
-    #header .wrap .m-search-btn { display:block;}
-    .search-wrap {
+
+    #header .wrap .m-search-btn {
+        display: block;
+    }
+
+    #header .wrap .container .search-wrap {
         display: none;
         padding: 22px;
         top: 76px;
         left: -20px;
         width: 100vw;
         height: 130px;
-        background-color: rgba(0,0,0,.7);
+        background-color: rgba(0, 0, 0, .7);
     }
-    .search-wrap.mobile-active {
+
+    #header .wrap .container .search-wrap.mobile-active {
         display: block;
     }
-    .search-wrap .gov_logo {
+
+    #header .wrap .container .search-wrap .gov_logo {
         display: none;
     }
-    .search-wrap .search {
+
+    #header .wrap .container .search-wrap .search-text {
         float: none;
         width: 100%;
         height: 45px;
     }
-    .search-wrap .search form {
+
+    #header .wrap .container .search-wrap .search-text form {
+        overflow: hidden;
         padding: 3px 5px 0;
         width: 100%;
         border-radius: 2px;
         border: 2px solid #006bb7;
-        overflow: hidden;
     }
-    input[type='text'] {
+
+    #header .wrap .container .search-wrap .search-text form input[type='text'] {
         width: 80%;
     }
-    .search-btn {
+
+    #header .wrap .container .search-wrap .search-text form .search-btn {
         position: absolute;
         top: 0;
         right: 0;
@@ -380,45 +400,53 @@
         height: 100%;
         background: #006bb7;
     }
-    .search-btn::after {
+
+    #header .wrap .container .search-wrap .search-text form .search-btn::after {
         top: 10px;
         left: 20px;
         content: '검색';
         color: #fff;
         background: transparent;
     }
-    .search-wrap .search .hidden-menu {
+
+    #header .wrap .container .search-wrap .search-text .hidden-menu {
         display: none;
     }
-    .search-wrap .search_box {
+
+    #header .wrap .container .search-wrap .search-list {
         margin-left: calc(50% - 160px);
     }
-    
-    .search-wrap .search_box .box {
+
+    #header .wrap .container .search-wrap .search-list .list {
         display: inline-block;
         width: 90px;
         height: 100%;
         line-height: 45px;
-        border-radius:0;
+        border-radius: 0;
         box-sizing: border-box;
         background: #fff;
         border: 1px solid #fff;
     }
+
     #footer::after {
         display: none;
     }
+
     #footer .wrap .container .link-wrap {
         padding: 15px 22px;
         margin-left: -22px;
         width: calc(100% + 44px);
     }
+
     #footer .wrap .container .go-wrap .go-item {
         width: 49.5%;
     }
+
     #footer .wrap .container .go-wrap .go-item:first-child {
         margin-right: 1%;
     }
 }
+
 @media screen and (max-width: 900px) {
     #main #section01 .wrap {
         padding: 20px 25px;
@@ -497,8 +525,8 @@
     }
 
     #main #section02 .wrap .container .area01 .img-wrap {
-        width: 50%;
         float: left;
+        width: 50%;
         height: 100%;
     }
 
@@ -511,9 +539,11 @@
         width: 100%;
         height: 476px;
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item {
         padding: 22px 0 0;
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest {
         float: left;
         width: 47.4809%;
@@ -521,90 +551,116 @@
         border-bottom: 0;
         border-right: 1px dotted #c4c4c4;
     }
-    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest > span {
+
+    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest>span {
         margin-top: 30px;
         line-height: 170%;
-    } 
-    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6){
+    }
+
+    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6) {
         float: right;
+        padding: 0;
         width: 51.5191%;
         height: 25%;
-        padding: 0;
     }
+
     #main #section02 .wrap .container .area02 .info-cont .box-wrap {
         width: 47.3758%;
-        margin-right: 0.1418%;
         height: 100%;
+        margin-right: 0.1418%;
     }
-    
+
     #main #section02 .wrap .container .area02 .info-cont .box-wrap .box {
         width: 50%;
         height: 100%;
     }
-    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box-01 {
+
+    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box01 {
         padding-top: 114px;
     }
-    
-    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box-02 {
+
+    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box02 {
         padding-top: 104px;
     }
+
     #main #section02 .wrap .container .area02 .info-cont .news {
-        /* width: 370px; */
         width: 52.4822%;
+        /* width: 370px; */
     }
+
     #main #section02 .wrap .container .area03 {
         width: 100%;
         height: 260px;
-        background: green;
         margin-bottom: 2%;
     }
 
     #main #section02 .wrap .container .area03 .img-wrap {
-        /* 900-44=856px */
         width: 78.271%;
         height: 100%;
-        /* width: 57.13668%; */
-        /* margin-right: 2%; */
+        /* 900-44=856px */
     }
 
     #main #section02 .wrap .container .area03 .img-wrap .list {
-        /* width: 54.3433%; */
-        /* width: 76.55%; */
-        /* width: 57.13668%; */
-        float: left;
+       /* float: left; */
+        height: 100%;
+        background-size: 100% 100%;
+    }
+
+    #main #section02 .wrap .container .area03 .img-wrap .policy-list {
         height: 100%;
     }
 
-    #main #section02 .wrap .container .area03 .img-wrap .menu-list {
-        background: gold;
-        height: 100%;
-    }
-
-    #main #section02 .wrap .container .area03 .img-wrap .menu-list .list {
-        width: 23.45%;
-    }
-
-
-    #main #section02 .wrap .container .area03 .guide-wrap {
-        /* 100%-76.44%*/
+    #main #section02 .wrap .container .area03 .guide-list {
         width: 19.2757%;
         height: 100%;
+        /* 100%-76.44%*/
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list {
+    #main #section02 .wrap .container .area03 .guide-list .list {
         float: none;
         width: 100%;
         height: 50%;
-        background: coral;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list a {
+        padding-left: 0;
+        line-height: 190px;
+    }
+    #main #section02 .wrap .container .area03 .guide-list .list01 {
+        border-right: 0;
+        border-bottom: 1px solid #fff;
+    }
+    #main #section02 .wrap .container .area03 .guide-list .list01 a::after,
+    #main #section02 .wrap .container .area03 .guide-list .list02 a::after {
+        content: '';
+        position: absolute;
+        top: calc(60% - 50px);
+        left: calc(50% - 25px);
+        background: #eaf1f6;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list01 a::before {
+        left: calc(50% - 15px);
+        top: calc(53% - 29px);
+        background: url(../img/bg_iconset.png) -175px -75px no-repeat;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list02 a::before {
+        width: 37px;
+        height: 28px;
+        top: calc(50% - 28px);
+        left: calc(50% - 18.5px);
+        background: url(../img/bg_iconset.png) -175px -125px no-repeat;
     }
 
     #main #section02 .wrap .container .area04 {
+        float: right;
         width: 100%;
     }
 
     #main #section02 .wrap .container .area04 .box-wrap {
-        width: 66.004%;
         float: left;
+        width: 66.004%;
         height: 100%;
     }
 
@@ -614,22 +670,21 @@
     }
 
     #main #section02 .wrap .container .area04 .list-wrap .list {
-        float: none;
         width: 100%;
+        height: 25%;
+    }
+
+
+    #main #section02 .wrap .container .area04 .list-wrap .list01,
+    #main #section02 .wrap .container .area04 .list-wrap .list03 {
+        border-right: 0;
     }
 
     #main #section02 .wrap .container .area04 .box-wrap .box::before {
         left: 39%;
     }
-
-    #main #section02 .wrap .container .area04 .list-wrap .list03 a::before {
-        left: 33%;
-    }
-
-    #main #section02 .wrap .container .area04 .list-wrap .list04 a::before {
-        left: 30%;
-    }
 }
+
 @media screen and (max-width: 768px) {
     #footer .wrap .container .address-wrap .logos {
         position: relative;
@@ -637,17 +692,21 @@
         text-align: center;
     }
 }
+
 @media screen and (max-width: 667px) {
     #main #section02 .wrap .container .area02 {
         height: 717px;
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap {
         height: 360px;
         padding: 5px 25px 20px 25px;
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item {
         padding: 22px 0;
     }
+
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest {
         float: none;
         display: block;
@@ -656,112 +715,150 @@
         border-right: 0;
         border-bottom: 1px dotted #c4c4c4;
     }
-    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest > span {
+
+    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab-latest>span {
         margin-top: 10px;
         line-height: 130%;
         white-space: nowrap;
-    } 
-    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6){
+    }
+
+    #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-item .tab:nth-child(n+2):nth-child(-n+6) {
         float: none;
-        display: block;
         position: relative;
+        display: block;
+        padding: 10px 0;
         width: 100%;
         height: 16.3216%;
-        padding: 10px 0;
     }
+
     #main #section02 .wrap .container .area02 .info-cont {
         height: 357px;
     }
+
     #main #section02 .wrap .container .area02 .info-cont .box-wrap {
         width: 100%;
         height: 145px;
     }
+
     #main #section02 .wrap .container .area02 .info-cont .box-wrap .box {
         float: left;
         width: 50%;
         height: 100%;
     }
-    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box-01 {
+
+    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box01 {
         padding-top: 90px;
     }
-    
-    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box-02 {
+
+    #main #section02 .wrap .container .area02 .info-cont .box-wrap .box02 {
         padding-top: 80px;
     }
+
     #main #section02 .wrap .container .area02 .info-cont .news {
         width: 100%;
         height: 212px;
     }
 }
+
 @media screen and (max-width: 600px) {
     #main #section01 .wrap {
         padding: 15px;
     }
+
     #main #section01 .wrap .container .slider-wrap {
         width: 100%;
         height: 310px;
     }
+
     #main #section01 .wrap .container .news-wrap .news a:hover .cover {
         padding: 4.7761%;
     }
+
     #main #section01 .wrap .container .news-wrap .news a .cover strong {
         margin-top: 2.985%;
     }
+
     #main #section01 .wrap .container .news-wrap .news a .cover i {
         visibility: hidden;
         height: 0;
     }
+
     #main #section01 .wrap .container .news-wrap .news a .cover span {
         max-height: auto;
     }
+
     #main #section01 .wrap .container .tab-wrap {
         position: relative;
         width: 100%;
         height: 302px;
     }
 }
+
 @media screen and (max-width: 568px) {
     #main #section02 .wrap .container .area03 {
         width: 100%;
-        background: pink;
         height: auto;
     }
 
     #main #section02 .wrap .container .area03 .img-wrap {
-        /* 568-44=524px */
         float: none;
         width: 100%;
         height: 257px;
-        background: green;
+        /* 568-44=524px */
     }
 
     #main #section02 .wrap .container .area03 .img-wrap .list {
         float: left;
     }
 
-    #main #section02 .wrap .container .area03 .img-wrap .menu-list {
-        /* 169.48/524 */
+    #main #section02 .wrap .container .area03 .img-wrap .policy-list {
         width: 32.3435%;
         height: 100%;
+        /* 169.48/524 */
     }
 
-    #main #section02 .wrap .container .area03 .img-wrap .menu-list .list {}
-
-    #main #section02 .wrap .container .area03 .guide-wrap {
+    #main #section02 .wrap .container .area03 .guide-list {
         width: 100%;
         height: 100%;
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list {
+    #main #section02 .wrap .container .area03 .guide-list .list {
         width: 50%;
-        height: 85px;
         float: left;
+        /* height: 85px; */
     }
 
-    #main #section02 .wrap .container .area03 .guide-wrap .list01 {
-        border-right: 1px solid #000;
-        box-sizing: border-box;
+    #main #section02 .wrap .container .area03 .guide-list .list a {
+        height: 85px;
         line-height: 85px;
+        padding-left: 30%;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list01 {
+        line-height: 85px;
+        box-sizing: border-box;
+        border-right: 1px solid #fff;
+        border-bottom: 0;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list01 a::after,
+    #main #section02 .wrap .container .area03 .guide-list .list02 a::after {
+        content: '';
+        position: absolute;
+        top: 16%;
+        left: calc(35% - 25px);
+        top: calc(80% - 50px);
+        background: #eaf1f6;
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list01 a::before {
+        left: calc(35% - 15px);
+        top: calc(68% - 29px);
+    }
+
+    #main #section02 .wrap .container .area03 .guide-list .list02 a::before {
+        top: calc(65% - 28px);
+        left: calc(35% - 18.5px);
     }
 
     #main #section02 .wrap .container .area04 {
@@ -771,44 +868,52 @@
 
     #main #section02 .wrap .container .area04 .box-wrap {
         width: 100%;
-
     }
-
-    #main #section02 .wrap .container .area04 .box-wrap .box {}
 
     #main #section02 .wrap .container .area04 .list-wrap {
         width: 100%;
-
+        height: 100%;
     }
 
     #main #section02 .wrap .container .area04 .list-wrap .list {
         float: left;
         width: 50%;
+        height: 57.5px;
+        box-sizing: border-box;
     }
 
-
+    #main #section02 .wrap .container .area04 .list-wrap .list01,
+    #main #section02 .wrap .container .area04 .list-wrap .list03 {
+        border-right: 1px dotted #9e9e9e;
+    }
 }
+
 @media screen and (max-width: 480px) {
     #main #section02 .wrap .container .area01 {
         height: 900px;
     }
+
     #main #section02 .wrap .container .area01 .img-wrap {
         float: none;
         width: 100%;
         height: 50%;
     }
+
     #main #section02 .wrap .container .area01 .col-content {
         width: 100%;
         height: 50%;
     }
+
     #footer .wrap .container .go-wrap .go-item {
         width: 100%;
     }
+
     #footer .wrap .container .go-wrap .go-item:first-child {
         margin-right: 0;
         margin-bottom: 8px;
     }
 }
+
 @media screen and (max-width: 414px) {
     #main #section02 .wrap .container .area02 .tab-wrap .tab-box .tab-btn .dot {
         margin: 0 2px;

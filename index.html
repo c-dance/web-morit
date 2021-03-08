@@ -55,7 +55,7 @@
                         <div class="gov_logo">
                             <a href="#section01" class="hide">보다나은 정부 새창열림</a>
                         </div>
-                        <div class="search">
+                        <div class="search-text">
                             <form action="">
                                 <select name="" id="text">
                                     <option value="통합검색">통합검색</option>
@@ -63,18 +63,17 @@
                                 </select>
                                 <label for="" class="hide">검색창</label>
                                 <input type="text" name="text" id="text" placeholder="검색어를 입력하세요.">
-                                <a href="$" class="search-btn"></a>
+                                <a href="#" class="search-btn"></a>
                             </form>
                             <a href="#" class="hidden-menu"></a>
                         </div>
-                        <ul class="search_box clearfix">
-                            <li class="box"><a href="">직원검색</a></li>
-                            <li class="box"><a href="">법령검색</a></li>
-                            <li class="box"><a href="">조직안내</a></li>
+                        <ul class="search-list clearfix">
+                            <li class="list"><a href="">직원검색</a></li>
+                            <li class="list"><a href="">법령검색</a></li>
+                            <li class="list"><a href="">조직안내</a></li>
                         </ul>
                     </div>
-                    <div class="m-search-btn"></div>
-                    <!-- <div class="site-box"><a href=""></a></div> -->
+                    <div class="site-box"><a href=""></a></div>
                 </div>
                 <div class="site-box"><a href=""></a></div>
                 <nav>
@@ -93,7 +92,7 @@
                                 <li class="sns"><a href="#">카카오 스토리</a></li>
                             </ul>
                         </div>
-                        <!-- 1 -->
+                        <!-- 뉴스·소식 -->
                         <li class="cont1">
                             <a href="#" class="cont1-tit">뉴스·소식<i class="triangle"></i></a>
                             <ul class="nav-depth2 clearfix">
@@ -146,7 +145,7 @@
                                 <li class="cont2"><a href="#" class="cont2-tit">정부포상</a></li>
                             </ul>
                         </li>
-                        <!-- 2 -->
+                        <!-- 국민참여 -->
                         <li class="cont1">
                             <a href="#" class="cont1-tit">국민참여<i class="triangle"></i></a>
                             <ul class="nav-depth2 clearfix">
@@ -200,7 +199,7 @@
                                 <li class="cont2"><a href="#" class="cont2-tit">크리에이터 협업</a></li>
                             </ul>
                         </li>
-                        <!-- 3 -->
+                        <!-- 정책자료 -->
                         <li class="cont1">
                             <a href="#" class="cont1-tit">정책자료<i class="triangle"></i></a>
                             <ul class="nav-depth2 clearfix">
@@ -230,7 +229,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- 4 -->
+                        <!-- 정보공개 -->
                         <li class="cont1">
                             <a href="#" class="cont1-tit">정보공개<i class="triangle"></i></a>
                             <ul class="nav-depth2 clearfix">
@@ -245,7 +244,6 @@
                                         <li class="cont3"><a href="#">상습체불건설업자 명단</a></li>
                                         <li class="cont3"><a href="#">국가안전대진단 점검결과</a></li>
                                         <li class="cont3"><a href="#">민간투자사업 실시협약</a></li>
-
                                     </ul>
                                 </li>
                                 <li class="cont2">
@@ -269,7 +267,7 @@
                                 <li class="cont2 cont2-long"><a href="#" class="cont2-tit">국토교통부위원회 운영현황</a></li>
                             </ul>
                         </li>
-                        <!-- 5 -->
+                        <!-- 기관소개 -->
                         <li class="cont1">
                             <a href="#" class="cont1-tit">기관소개<i class="triangle"></i></a>
                             <ul class="nav-depth2 clearfix">
@@ -305,13 +303,13 @@
                     </ul>
                     <div class="nav-bg"></div>
                 </nav>
-            </div><!-- //wrap -->
+            </div>
         </header>
-        <!-- 메인영역 시작 -->
         <main id="main">
             <section id="section01">
                 <div class="wrap">
                     <div class="container">
+                        <!-- sec01 mainSilde -->
                         <section class="slider-wrap">
                             <div class="slider-box round-box">
                                 <div class="slide-view">
@@ -337,6 +335,7 @@
                                 </div>
                             </div>
                         </section>
+                        <!-- sec01 newsWrap -->
                         <section class="news-wrap clearfix">
                             <article class="news round-box">
                                 <a>
@@ -369,6 +368,7 @@
                                     </div>
                                 </a>
                             </article>
+                            <!-- sec01 buttonSlide-->
                             <article class="news round-box">
                                 <div class="slide-view">
                                     <div class="slide-wrap">
@@ -392,7 +392,7 @@
                                 </div>
                             </article>
                         </section>
-                        <!-- 섹션1 탭메뉴 -->
+                        <!-- sec01 TabMenu -->
                         <section class="tab-wrap">
                             <div class="tab-box round-box">
                                 <div class="tab-btn">
@@ -438,44 +438,39 @@
                     </div>
                 </div>
             </section>
-            <!-- section02 영역 -->
             <section id="section02">
                 <div class="wrap">
                     <div class="container clearfix">
-                        <!-- area01 시작 -->
-                       <!-- area01 시작 -->
-                       <div class="area01 round-box" class="clearfix">
-                        <div class="img-wrap">
-                            <a href="#">
-                                <img src="./img/area01.jpg" alt="국민이 정책을 만듭니다.">
-                            </a>
+                        <!-- section02 area01 -->
+                        <div class="area01 round-box" class="clearfix">
+                            <div class="img-wrap">
+                                <a href="#">
+                                    <img src="./img/area01.jpg" alt="국민이 정책을 만듭니다.">
+                                </a>
+                            </div>
+                            <div class="col-content">
+                                <a href="#" class="minister">
+                                    <div class="text-wrap">
+                                        <strong class="title">열린장관실</strong>
+                                        <p class="text">
+                                            국민 삶의 질 향상과 안전을 위해<br>
+                                            최선을 다하겠습니다
+                                        </p>
+                                        <p class="arrow"></p>
+                                    </div>
+                                </a>
+                                <ul class="list-wrap">
+                                    <li class="list list01"><a href="">국민제안</a></li>
+                                    <li class="list list02"><a href="">민원마당</a></li>
+                                    <li class="list list03"><a href="">적극행정</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-content">
-                            <!-- <div class="minister"> -->
-                            <a href="#" class="minister">
-                                <div class="text-wrap">
-                                    <strong class="title">열린장관실</strong>
-                                    <p class="text">
-                                        국민 삶의 질 향상과 안전을 위해<br>
-                                        최선을 다하겠습니다
-                                    </p>
-                                    <p class="arrow"></p>
-                                </div>
-                            </a>
-                            <!-- </div> -->
-                            <ul class="list-wrap">
-                                <li class="list list01"><a href="">국민제안</a></li>
-                                <li class="list list02"><a href="">민원마당</a></li>
-                                <li class="list list03"><a href="">적극행정</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                        <!-- area02 영역 -->
+                        <!-- section02 area02 -->
                         <div class="area02 round-box" class="clearfix">
-                            <!-- 상단박스 -->
+                            <!-- area02 tab-wrap -->
                             <section class="tab-wrap">
                                 <div class="tab-box">
-                                    <!-- 메뉴 -->
                                     <div class="tab-btn">
                                         <a herf="#none" class="btn active">공지사항</a>
                                         <i class="dot"></i>
@@ -488,6 +483,7 @@
                                             <i></i>
                                         </a>
                                     </div>
+                                    <!-- 공지사항 -->
                                     <article class="tab-item active">
                                         <a href="#none" class="tab tab-latest">
                                             <i class="date-box">2021.02<b>24</b></i>
@@ -569,60 +565,61 @@
                                         </a>
                                     </article>
                                 </div>
-                            </section><!-- //상단박스 -->
-
-
+                            </section>
+                            <!-- area02 info-cont -->
                             <div class="info-cont clearfix">
-                                <!-- 법령정보box -->
                                 <ul class="box-wrap clearfix">
-                                    <li class="box box-01"><a href="#">법령정보</a></li>
-                                    <li class="box box-02"><a href="#">국토교통<br>정보시스템</a></li>
+                                    <li class="box box01"><a href="#">법령정보</a></li>
+                                    <li class="box box02"><a href="#">국토교통<br>정보시스템</a></li>
                                 </ul>
-                                <!-- 슬라이드box -->
                                 <article class="news">
                                     <div class="slide-view">
                                         <div class="slide-wrap">
-                                            <a href="#none" class="slide slide0"><img src="./img/info_slide01.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide1"><img src="./img/info_slide02.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide2"><img src="./img/info_slide03.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide3"><img src="./img/info_slide04.gif" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide4"><img src="./img/info_slide05.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide5"><img src="./img/info_slide06.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide6"><img src="./img/info_slide07.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide7"><img src="./img/info_slide08.jpg" alt="slide photo"></a>
-                                            <a href="#none" class="slide slide8"><img src="./img/info_slide09.jpg" alt="slide photo"></a>
+                                            <a href="#none" class="slide slide0"><img src="./img/info_slide01.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide1"><img src="./img/info_slide02.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide2"><img src="./img/info_slide03.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide3"><img src="./img/info_slide04.gif"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide4"><img src="./img/info_slide05.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide5"><img src="./img/info_slide06.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide6"><img src="./img/info_slide07.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide7"><img src="./img/info_slide08.jpg"
+                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide8"><img src="./img/info_slide09.jpg"
+                                                    alt="slide photo"></a>
                                         </div>
                                     </div>
                                     <div class="top-cover clearfix">
                                         알림판
                                         <span>
-                                            <i class="active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                                            <i
+                                                class="active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
                                         </span>
                                     </div>
                                 </article>
-                            </div><!-- //info-cont 하단box -->
-                        </div><!-- //area02 -->
-
-                        <!-- area03 시작 -->
-                        <!-- area03 시작 -->
+                            </div>
+                        </div>
+                        <!-- section02 area03 -->
                         <div class="area03" class="clearfix">
-                            <p class="policy-tit"><a href="#">정책자료</a></p>
-                            <!-- 이미지wrap -->
+                            <p class="policy-tit">
+                                <a href="#">정책자료</a>
+                            </p>
                             <ul class="img-wrap round-box" class="clearfix">
                                 <li class="list list01" class="on">
                                     <div class="img-cover"></div>
-                                    <a href="">
+                                    <a href="#">
                                         <h3 class="title">국토도시</h3>
-                                        <span class="text">
-                                            대한민국 모두를 생각하는 국토 및 도시 
-                                            <br> 
-                                            정책을 확인하실 수 있습니다
-                                        </span>
+                                        <span class="title-desc">대한민국 모두를 생각하는 국토 및 도시<br>정책을 확인하실 수 있습니다</span>
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
-                                <!-- 메뉴list -->
-                                <ul class="menu-list">
+                                <ul class="policy-list">
                                     <li><a href="#" class="active">국토도시</a></li>
                                     <li><a href="#">주택도지</a></li>
                                     <li><a href="#">건설</a></li>
@@ -631,33 +628,31 @@
                                     <li><a href="#">도로철도</a></li>
                                 </ul>
                             </ul>
-                            <ul class="guide-wrap round-box" class="clearfix">
+                            <ul class="guide-list round-box" class="clearfix">
                                 <li class="list list01"><a href="">직원안내</a></li>
                                 <li class="list list02"><a href="">조직안내</a></li>
                             </ul>
                         </div>
-
-                        <!-- area04 시작 -->
+                        <!-- section02 area04 -->
                         <div class="area04" class="clearfix">
                             <ul class="box-wrap round-box" class="clearfix">
-                                <li class="box box01"><a href="">업무계획</a></li>
-                                <li class="box box02"><a href="">도시재생</a></li>
-                                <li class="box box03"><a href="">규제개혁신문고</a></li>
-                                <li class="box box04"><a href="">광역교통</a></li>
-                                <li class="box box05"><a href="">주거급여</a></li>
-                                <li class="box box06"><a href="">렌트홈</a></li>
+                                <li class="box box01"><a href="#">업무계획</a></li>
+                                <li class="box box02"><a href="#">도시재생</a></li>
+                                <li class="box box03"><a href="#">규제개혁신문고</a></li>
+                                <li class="box box04"><a href="#">광역교통</a></li>
+                                <li class="box box05"><a href="#">주거급여</a></li>
+                                <li class="box box06"><a href="#">렌트홈</a></li>
                             </ul>
                             <ul class="list-wrap round-box">
-                                <li class="list list01"><a href="">실거래 공개</a></li>
-                                <li class="list list02"><a href="">공시가격알리미</a></li>
-                                <li class="list list03"><a href=""></a></li>
-                                <li class="list list04"><a href=""></a></li>
+                                <li class="list list01"><a href="#">실거래 공개</a></li>
+                                <li class="list list02"><a href="#">공시가격알리미</a></li>
+                                <li class="list list03"><a href="#"></a></li>
+                                <li class="list list04"><a href="#"></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- section03 영역 -->
             <section id="section03">
                 <div class="wrap">
                     <div class="container">
@@ -767,6 +762,7 @@
         </footer>
     </div>
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>
