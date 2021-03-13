@@ -112,10 +112,13 @@
 
 #header .wrap .container .search-wrap .search-text form select {
     display: inline-block;
+    position: relative;
+    margin-left: 5px;
     outline: none;
     width: 70px;
     height: 35px;
-    background-color: #fff;
+    background: url(../img/bg_iconselect.png) 100% 50% no-repeat;
+    appearance: none;
 }
 
 #header .wrap .container .search-wrap .search-text form input[type='text'] {
@@ -128,7 +131,9 @@
 
 #header .wrap .container .search-wrap .search-text form .search-btn {
     position: relative;
-    display: inline-block;
+    float: right;
+    /* display: inline-block; */
+    margin-top: 5px;
     width: 30px;
     height: 25px;
 }
@@ -214,7 +219,7 @@
 #header .wrap .site-box.fixed {
     position: fixed;
     top: 0;
-    right: 20px;
+    right: 0;
     width: 64px;
     height: 64px;
 }
@@ -858,7 +863,7 @@
 
 #main #section01 .wrap .container .round-box,
 #main #section02 .wrap .container .round-box {
-    border: 1px solid #dfdfdf;
+    /* border: 1px solid #dfdfdf; */
     border-radius: 10px;
     overflow: hidden;
 }
@@ -1629,13 +1634,9 @@
     position: relative;
     width: 100%;
     height: 33.3333%;
-    border-bottom: 1px solid #d3d3d3;
-    background: #fff;
-}
 
-#main #section02 .wrap .container .area01 .col-content .list-wrap .list:hover {
-    transition: all .3s;
-    background: #cee7f1;
+    background: #fff;
+
 }
 
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list a {
@@ -1646,6 +1647,13 @@
     padding-left: 50%;
     text-align: left;
     background: #fff;
+    border-bottom: 1px solid #d3d3d3;
+    transition: all .3s;
+}
+
+#main #section02 .wrap .container .area01 .col-content .list-wrap .list:hover a {
+    background: #cee7f1;
+    border-bottom: 0 solid #d3d3d3;
 }
 
 #main #section02 .wrap .container .area01 .col-content .list-wrap .list a::before {
@@ -1937,9 +1945,17 @@
     background: #d0e3f1;
 }
 
+#main #section02 .wrap .container .area02 .info-cont .box-wrap .box01:hover {
+    background-color: #a7c5d8;
+}
+
 #main #section02 .wrap .container .area02 .info-cont .box-wrap .box02 {
     padding-top: 90px;
     background: #b8d2e4;
+}
+
+#main #section02 .wrap .container .area02 .info-cont .box-wrap .box02:hover {
+    background-color: #a7c5d8
 }
 
 #main #section02 .wrap .container .area02 .info-cont .box-wrap .box a {
@@ -2191,6 +2207,11 @@
     height: 100%;
 }
 
+#main #section02 .wrap .container .area03 .img-wrap .policy-list ul {
+    width: 100%;
+    height: 100%;
+}
+
 #main #section02 .wrap .container .area03 .img-wrap .policy-list li {
     z-index: 3;
     position: relative;
@@ -2251,7 +2272,11 @@
     box-sizing: border-box;
     background: #cae0ef;
 }
-#main #section02 .wrap .container .area03 .guide-list .list:last-child {border-bottom: 0; }
+
+#main #section02 .wrap .container .area03 .guide-list .list:last-child {
+    border-bottom: 0;
+}
+
 #main #section02 .wrap .container .area03 .guide-list .list:hover {
     transition: all .3s;
     background: #a7c5d8;
@@ -2328,10 +2353,16 @@
     float: left;
     width: 33.3333%;
     height: 115px;
-    /* padding-bottom: 16px; */
-    border-bottom: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
     background: #fff;
+}
+
+#main #section02 .wrap .container .area04 .box-wrap .box:nth-child(-n + 3) {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#main #section02 .wrap .container .area04 .box-wrap .box:nth-child(-3n + 4) {
+    border-left: 0;
 }
 
 #main #section02 .wrap .container .area04 .box-wrap .box:hover {

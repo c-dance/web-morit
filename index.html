@@ -56,12 +56,12 @@
                             <a href="#section01" class="hide">보다나은 정부 새창열림</a>
                         </div>
                         <div class="search-text">
-                            <form action="">
-                                <select name="" id="text">
-                                    <option value="통합검색">통합검색</option>
-                                    <option value="직원검색">직원검색</option>
+                            <form class="clearfix">
+                                <select name="text">
+                                    <option value="통합검색">통합검색 </option>
+                                    <option value="직원검색">직원검색 </option>
                                 </select>
-                                <label for="" class="hide">검색창</label>
+                                <label for="text" class="hide">검색창</label>
                                 <input type="text" name="text" id="text" placeholder="검색어를 입력하세요.">
                                 <a href="#" class="search-btn"></a>
                             </form>
@@ -73,13 +73,13 @@
                             <li class="list"><a href="">조직안내</a></li>
                         </ul>
                     </div>
-                    <div class="site-box"><a href=""></a></div>
                 </div>
                 <div class="site-box"><a href=""></a></div>
+                <a href="" class="m-search-btn"></a>
                 <nav>
                     <ul class="nav-depth1 clearfix">
-                        <a href="#section01" class="nav-logo"></a>
-                        <div class="util-menu clearfix">
+                        <li style="display: inline"><a href="#section01" class="nav-logo"></a></li>
+                        <li class="util-menu clearfix">
                             <ul class="menu-wrap clearfix">
                                 <li class="text after"><a href="#">어린이·청소년마당</a></li>
                                 <li class="text"><a href="#">ENGLISH</a></li>
@@ -91,7 +91,7 @@
                                 <li class="sns"><a href="#">유튜브</a></li>
                                 <li class="sns"><a href="#">카카오 스토리</a></li>
                             </ul>
-                        </div>
+                        </li>
                         <!-- 뉴스·소식 -->
                         <li class="cont1">
                             <a href="#" class="cont1-tit">뉴스·소식<i class="triangle"></i></a>
@@ -306,22 +306,23 @@
             </div>
         </header>
         <main id="main">
+            <h2 class="hide">메인컨텐츠</h2>
             <section id="section01">
                 <div class="wrap">
                     <div class="container">
-                        <!-- sec01 mainSilde -->
-                        <section class="slider-wrap">
+                        <h2 class="hide">Section1 Heading</h2>
+                        <div class="slider-wrap">
                             <div class="slider-box round-box">
                                 <div class="slide-view">
                                     <div class="slide-wrap">
                                         <a href="#none" class="slide"><img src="./img/slide01.jpg"
-                                                alt="slide photo"></a>
+                                                alt="집 걱정 덜고 지역활력 더하고 혁신으로 선도형 경제도약"></a>
                                         <a href="#none" class="slide"><img src="./img/slide02.png"
-                                                alt="slide photo"></a>
+                                                alt="내가 주도하면 브랜드 아파트 지을 수 있다? 있다!"></a>
                                         <a href="#none" class="slide"><img src="./img/slide03.jpg"
-                                                alt="slide photo"></a>
+                                                alt="공공주도 3080+ 전국 83만호 최대 80% 분양 3년이상 무주택자 추첨 늘려"></a>
                                         <a href="#none" class="slide"><img src="./img/slide04.jpg"
-                                                alt="slide photo"></a>
+                                                alt="광명시흥·부산대저·광주산정 신규공공택지 10만호 입지 우선 확정"></a>
                                     </div>
                                 </div>
                                 <div class="slide-btns">
@@ -334,12 +335,12 @@
                                     </span>
                                 </div>
                             </div>
-                        </section>
-                        <!-- sec01 newsWrap -->
+                        </div>
                         <section class="news-wrap clearfix">
                             <article class="news round-box">
-                                <a>
-                                    <img src="./img/news1.jpg" alt="photo news">
+                                <h2 class="hide">포토뉴스</h2>
+                                <a href="#">
+                                    <img src="./img/news1.jpg" alt="공공주도3080+, 대도시권 주택공급 획기적 확대방안 발표">
                                     <div class="cover">
                                         <strong class="cover-icon">포토뉴스</strong>
                                         <i></i>
@@ -348,19 +349,21 @@
                                 </a>
                             </article>
                             <article class="news round-box">
+                                <h2 class="hide">동영상뉴스</h2>
                                 <a class="video-news-img">
-                                    <img src="./img/news2.jpg" alt="video news">
+                                    <img src="./img/news2.jpg" alt="우리나라 최초의 배달 품목은 평양냉면이다?">
                                     <div class="cover">
                                         <strong class="cover-icon">동영상뉴스</strong>
                                         <i></i>
                                         <span>우리나라 최초의 배달 품목은 평양냉면이다?</span>
                                     </div>
                                 </a>
-                                <a href="" class="video-news-btn"><i></i></a>
+                                <a href="#" class="video-news-btn"><i></i></a>
                             </article>
                             <article class="news round-box">
-                                <a>
-                                    <img src="./img/news3.jpg" alt="card news">
+                                <h2 class="hide">카드뉴스</h2>
+                                <a href="#">
+                                    <img src="./img/news3.jpg" alt="서울에만 분당 3배 규모,32만 가구 공급!">
                                     <div class="cover">
                                         <strong class="cover-icon">카드뉴스</strong>
                                         <i></i>
@@ -370,18 +373,17 @@
                             </article>
                             <!-- sec01 buttonSlide-->
                             <article class="news round-box">
+                                <h2 class="hide">뉴스 슬라이드</h2>
                                 <div class="slide-view">
                                     <div class="slide-wrap">
                                         <a href="#non3" class="slide slide0"><img src="./img/news4_01.jpg"
-                                                alt="slide photo"></a>
+                                                alt="부동산대책 정보사이트 정책풀이집"></a>
                                         <a href="#non3" class="slide slide1"><img src="./img/news4_02.jpg"
-                                                alt="slide photo"></a>
+                                                alt="집 걱정은 덜고 지역 활력은 더하고 혁신은 배가 되는 2021년"></a>
                                         <a href="#non3" class="slide slide2"><img src="./img/news4_03.jpg"
-                                                alt="slide photo"></a>
+                                                alt="크리에이터 협업공간"></a>
                                         <a href="#non3" class="slide slide3"><img src="./img/news4_04.jpg"
-                                                alt="slide photo"></a>
-                                        <a href="#non3" class="slide slide4"><img src="./img/news4_01.jpg"
-                                                alt="slide photo"></a>
+                                                alt="선도국가로 도약하는 대한민국 대전환 새로운 100년의 설계 '한국판 뉴딜' 한국판뉴딜 자세히 보기"></a>
                                     </div>
                                 </div>
                                 <div class="top-cover clearfix">
@@ -392,13 +394,13 @@
                                 </div>
                             </article>
                         </section>
-                        <!-- sec01 TabMenu -->
                         <section class="tab-wrap">
+                            <h2 class="hide">탭메뉴</h2>
                             <div class="tab-box round-box">
                                 <div class="tab-btn">
-                                    <a herf="#none" class="btn active">보도자료</a>
+                                    <a href="#none" class="btn active">보도자료</a>
                                     <i class="dot"></i>
-                                    <a herf="#none" class="btn">설명 반박자료</a>
+                                    <a href="#none" class="btn">설명 반박자료</a>
                                     <a class="btn-more">
                                         <i></i>
                                     </a>
@@ -441,8 +443,8 @@
             <section id="section02">
                 <div class="wrap">
                     <div class="container clearfix">
-                        <!-- section02 area01 -->
-                        <div class="area01 round-box" class="clearfix">
+                        <!-- <h2 class="hide">Section2 Heading</h2> -->
+                        <div class="area01 round-box clearfix">
                             <div class="img-wrap">
                                 <a href="#">
                                     <img src="./img/area01.jpg" alt="국민이 정책을 만듭니다.">
@@ -467,18 +469,18 @@
                             </div>
                         </div>
                         <!-- section02 area02 -->
-                        <div class="area02 round-box" class="clearfix">
-                            <!-- area02 tab-wrap -->
+                        <div class="area02 round-box clearfix">
                             <section class="tab-wrap">
+                                <h2 class="hide">탭메뉴</h2>
                                 <div class="tab-box">
                                     <div class="tab-btn">
-                                        <a herf="#none" class="btn active">공지사항</a>
+                                        <a href="#" class="btn active">공지사항</a>
                                         <i class="dot"></i>
-                                        <a herf="#none" class="btn">채용</a>
+                                        <a href="#" class="btn">채용</a>
                                         <i class="dot"></i>
-                                        <a herf="#none" class="btn">인사</a>
+                                        <a href="javascript:void(0)" class="btn">인사</a>
                                         <i class="dot"></i>
-                                        <a herf="#none" class="btn">입찰</a>
+                                        <a href="#" class="btn">입찰</a>
                                         <a class="btn-more">
                                             <i></i>
                                         </a>
@@ -573,26 +575,37 @@
                                     <li class="box box02"><a href="#">국토교통<br>정보시스템</a></li>
                                 </ul>
                                 <article class="news">
+                                    <h2 class="hide">뉴스</h2>
                                     <div class="slide-view">
                                         <div class="slide-wrap">
-                                            <a href="#none" class="slide slide0"><img src="./img/info_slide01.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide1"><img src="./img/info_slide02.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide2"><img src="./img/info_slide03.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide3"><img src="./img/info_slide04.gif"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide4"><img src="./img/info_slide05.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide5"><img src="./img/info_slide06.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide6"><img src="./img/info_slide07.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide7"><img src="./img/info_slide08.jpg"
-                                                    alt="slide photo"></a>
-                                            <a href="#none" class="slide slide8"><img src="./img/info_slide09.jpg"
-                                                    alt="slide photo"></a>
+                                            <a href="#none" class="slide slide0">
+                                                <img src="./img/info_slide01.jpg" alt="2021년 제 9기 국토교통부 어린이 기자단 합격자 발표">
+                                            </a>
+                                            <a href="#none" class="slide slide1">
+                                                <img src="./img/info_slide02.jpg" alt="2021년 제 9기 국토교통부 정책기자단 합격자 발표">
+                                            </a>
+                                            <a href="#none" class="slide slide2">
+                                                <img src="./img/info_slide03.jpg" alt="6.25전쟁 무공훈장 주인공 찾기 캠페인">
+                                            </a>
+                                            <a href="#none" class="slide slide3">
+                                                <img src="./img/info_slide04.gif" alt="제 102주년 3.1절 태극기 달기">
+                                            </a>
+                                            <a href="#none" class="slide slide4">
+                                                <img src="./img/info_slide05.jpg"
+                                                    alt="한국판 뉴딜 참여예산 공모대회 2021.01.28~2.28">
+                                            </a>
+                                            <a href="#none" class="slide slide5">
+                                                <img src="./img/info_slide06.jpg" alt="2020년도 공공기관 부패방지 시책평가 결과 - 3등급">
+                                            </a>
+                                            <a href="#none" class="slide slide6">
+                                                <img src="./img/info_slide07.jpg" alt="국가정신건강정보포털 2020년 2월 1일 OPEN">
+                                            </a>
+                                            <a href="#none" class="slide slide7">
+                                                <img src="./img/info_slide08.jpg" alt="2021 적극행정 국민체감, 적극행정 접시론">
+                                            </a>
+                                            <a href="#none" class="slide slide8">
+                                                <img src="./img/info_slide09.jpg" alt="2021년 표준지공시지가">
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="top-cover clearfix">
@@ -606,12 +619,12 @@
                             </div>
                         </div>
                         <!-- section02 area03 -->
-                        <div class="area03" class="clearfix">
+                        <div class="area03 clearfix">
                             <p class="policy-tit">
                                 <a href="#">정책자료</a>
                             </p>
-                            <ul class="img-wrap round-box" class="clearfix">
-                                <li class="list list01" class="on">
+                            <ul class="img-wrap round-box clearfix">
+                                <li class="list list01 on">
                                     <div class="img-cover"></div>
                                     <a href="#">
                                         <h3 class="title">국토도시</h3>
@@ -619,7 +632,8 @@
                                         <span class="arrow"></span>
                                     </a>
                                 </li>
-                                <ul class="policy-list">
+                                <li  class="policy-list">
+                                 <ul>
                                     <li><a href="#" class="active">국토도시</a></li>
                                     <li><a href="#">주택도지</a></li>
                                     <li><a href="#">건설</a></li>
@@ -627,15 +641,17 @@
                                     <li><a href="#">항공</a></li>
                                     <li><a href="#">도로철도</a></li>
                                 </ul>
+                                </li>
+
                             </ul>
-                            <ul class="guide-list round-box" class="clearfix">
+                            <ul class="guide-list round-box clearfix">
                                 <li class="list list01"><a href="">직원안내</a></li>
                                 <li class="list list02"><a href="">조직안내</a></li>
                             </ul>
                         </div>
                         <!-- section02 area04 -->
-                        <div class="area04" class="clearfix">
-                            <ul class="box-wrap round-box" class="clearfix">
+                        <div class="area04 clearfix">
+                            <ul class="box-wrap round-box clearfix">
                                 <li class="box box01"><a href="#">업무계획</a></li>
                                 <li class="box box02"><a href="#">도시재생</a></li>
                                 <li class="box box03"><a href="#">규제개혁신문고</a></li>
@@ -656,6 +672,7 @@
             <section id="section03">
                 <div class="wrap">
                     <div class="container">
+                        <h2 class="hide">Section3 Heading</h2>
                         <div class="btn-wrap">
                             <button><i></i></button>
                             <button><i></i></button>
@@ -664,13 +681,17 @@
                         </div>
                         <div class="banner-view">
                             <ul class="banner-wrap clearfix">
-                                <li class="banner-item"><a href=""><img src="./img/banner01.jpg" alt=""></a></li>
-                                <li class="banner-item"><a href=""><img src="./img/banner02.jpg" alt=""></a></li>
-                                <li class="banner-item"><a href=""><img src="./img/banner03.jpg" alt=""></a></li>
-                                <li class="banner-item"><a href=""><img src="./img/banner04.jpg" alt=""></a></li>
-                                <li class="banner-item"><a href=""><img src="./img/banner05.jpg" alt=""></a></li>
-                                <li class="banner-item"><a href=""><img src="./img/banner06.jpg" alt=""></a></li>
-                                <li class="banner-item"><a href=""><img src="./img/banner07.jpg" alt=""></a></li>
+                                <li class="banner-item"><a href=""><img src="./img/banner01.jpg" alt="국토발전전시관"></a></li>
+                                <li class="banner-item"><a href=""><img src="./img/banner02.jpg" alt="국토교통부노동조합"></a>
+                                </li>
+                                <li class="banner-item"><a href=""><img src="./img/banner03.jpg" alt="부동산광고시장감시센터"></a>
+                                </li>
+                                <li class="banner-item"><a href=""><img src="./img/banner04.jpg"
+                                            alt="부동산거래질서교란행위 신고센터"></a></li>
+                                <li class="banner-item"><a href=""><img src="./img/banner05.jpg"
+                                            alt="국토교통부 동서남해안및내륙권발전기획단"></a></li>
+                                <li class="banner-item"><a href=""><img src="./img/banner06.jpg" alt="복지로"></a></li>
+                                <li class="banner-item"><a href=""><img src="./img/banner07.jpg" alt="정부24"></a></li>
                             </ul>
                         </div>
                     </div>

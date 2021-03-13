@@ -601,7 +601,7 @@
     }
 
     #main #section02 .wrap .container .area03 .img-wrap .list {
-       /* float: left; */
+        /* float: left; */
         height: 100%;
         background-size: 100% 100%;
     }
@@ -626,10 +626,12 @@
         padding-left: 0;
         line-height: 190px;
     }
+
     #main #section02 .wrap .container .area03 .guide-list .list01 {
         border-right: 0;
         border-bottom: 1px solid #fff;
     }
+
     #main #section02 .wrap .container .area03 .guide-list .list01 a::after,
     #main #section02 .wrap .container .area03 .guide-list .list02 a::after {
         content: '';
@@ -648,8 +650,8 @@
     #main #section02 .wrap .container .area03 .guide-list .list02 a::before {
         width: 37px;
         height: 28px;
-        top: calc(50% - 28px);
         left: calc(50% - 18.5px);
+        top: calc(50% - 28px);
         background: url(../img/bg_iconset.png) -175px -125px no-repeat;
     }
 

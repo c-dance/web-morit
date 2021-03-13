@@ -398,37 +398,37 @@ $(document).ready(function () {
         
         var imgList = [
             {
-                imgUrl : '../img/policy_bg01.jpg',
+                imgUrl : './img/policy_bg01.jpg',
                 title: '국토도시',
                 text: '대한민국 모두를 생각하는 국토 및 도시 <br> 정책을 확인하실 수 있습니다.',
                 linkUrl:'#none'
             },
             {
-                imgUrl : '../img/policy_bg02.jpg',
+                imgUrl : './img/policy_bg02.jpg',
                 title: '주택토지',
                 text: '주택시장 안정 및 합리적인 토지이용을 <br> 위한 정책 자료를 확인하실 수 있습니다.',
                 linkUrl:'#none'
             },
             {
-                imgUrl : '../img/policy_bg03.jpg',
+                imgUrl : './img/policy_bg03.jpg',
                 title: '건설',
                 text: '건설 기술력 증대를 위한 다양한 건설경제, <br> 기술안전, 해외건설 등의 정책 자료를 제공합니다.',
                 linkUrl:'#none'
             },
             {
-                imgUrl : '../img/policy_bg04.jpg',
+                imgUrl : './img/policy_bg04.jpg',
                 title: '교통물류',
                 text: '기술안전, 해외건설 등의 정책 자료를 제공합니다. <br> 있습니다.',
                 linkUrl:'new link'
             },
             {
-                imgUrl : '../img/policy_bg05.jpg',
+                imgUrl : './img/policy_bg05.jpg',
                 title: '항공',
                 text: '편리하고 안전한 항공교통 관련 정책을 <br> 제공합니다.',
                 linkUrl:'new link'
             },
             {
-                imgUrl : '../img/policy_bg06.jpg',
+                imgUrl : './img/policy_bg06.jpg',
                 title: '도로철도',
                 text: '국민을 위한 안전한 도로 및 철도환경을 <br> 위한 정책을 확인하실 수 있습니다.',
                 linkUrl:'new link'
